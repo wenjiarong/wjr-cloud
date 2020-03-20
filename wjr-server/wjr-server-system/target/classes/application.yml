@@ -1,0 +1,30 @@
+server:
+  port: 8201
+
+spring:
+  #关闭数据库自动装配
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  application:
+    name: wjr-server-system
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 20
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    instance-info-replication-interval-seconds: 30
+    serviceUrl:
+      defaultZone: http://wjr:123456@localhost:8001/register/eureka/
+
+security:
+  oauth2:
+    resource:
+      id: ${spring.application.name}
+      user-info-uri: http://localhost:8301/auth/user
+
+#user-info-uri路径为http://localhost:8301/auth/user，通过微服务网关，
+#该请求将被转发到http://localhost:8101/user。该配置的作用主要有两个：
+#1、到认证服务器里校验当前请求头中的令牌是否为合法的令牌；
+#2、通过当前令牌获取对应的用户信息。

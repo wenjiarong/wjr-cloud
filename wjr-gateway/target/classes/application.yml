@@ -1,0 +1,58 @@
+server:
+  port: 8301
+
+spring:
+  #关闭数据库自动装配
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  application:
+    name: wjr-gateway
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 20
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    instance-info-replication-interval-seconds: 30
+    registry-fetch-interval-seconds: 3
+    serviceUrl:
+      defaultZone: http://wjr:123456@localhost:8001/register/eureka/
+
+zuul:
+  #要让我们自定义的Zuul异常过滤器生效，还需要在wjr-gateway的配置文件中添加如下配置，让默认的异常过滤器失效：
+  SendErrorFilter:
+    error:
+      disable: true
+  routes:
+    auth:
+      path: /auth/**
+      serviceId: wjr-auth
+      sensitiveHeaders: "*"
+      #由于我们需要在请求头中携带令牌，所以sensitiveHeaders设置为*，表示不过滤请求头信息
+    system:
+      path: /system/**
+      serviceId: wjr-server-system
+      sensitiveHeaders: "*"
+      #由于我们需要在请求头中携带令牌，所以sensitiveHeaders设置为*，表示不过滤请求头信息
+    test:
+      path: /test/**
+      serviceId: wjr-server-test
+      sensitiveHeaders: "*"
+      #由于我们需要在请求头中携带令牌，所以sensitiveHeaders设置为*，表示不过滤请求头信息
+  retryable: true             #zuul.retryable，设置为true时，表示开启重试机制；
+  ignored-services: "*"       #Zuul配合Eureka后会有一套默认的配置规则，这里我们只想请求根据我们显示配置的路由规则走，所以设置为*，表示关闭所有默认路由配置规则
+  ribbon:
+    eager-load:
+      enabled: true
+#zuul.ribbon.eager-load.enabled，Zuul内部通过Ribbon按照一定的负载均衡
+#算法来获取服务，Ribbon进行客户端负载均衡的Client并不是在服务启动的时
+#候就初始化好的，而是在调用的时候才会去创建相应的Client，所以第一次调
+#用的耗时不仅仅包含发送HTTP请求的时间，还包含了创建RibbonClient的时间，
+#这样一来如果创建时间速度较慢，同时设置的超时时间又比较短的话，第一次
+#请求很容易出现超时的情况。设置为true的时候表示开启Ribbon的饥饿加载模
+#式，即在应用启动的时候就去获取相应的Client备用
+
+ribbon:
+  ReadTimeout: 3000
+#ribbon.ReadTimeout，设置请求超时时间，单位为毫秒；

@@ -1,0 +1,23 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /register
+
+spring:
+  application:
+    name: wjr-eureka
+  security:
+    user:
+      name: wjr
+      password: 123456
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    instance-info-replication-interval-seconds: 30
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}${server.servlet.context-path}/eureka/
+
