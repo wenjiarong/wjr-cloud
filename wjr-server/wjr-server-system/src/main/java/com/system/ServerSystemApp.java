@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @WjrCloudApplication
 @MapperScan("com.system.mapper")
-@EnableTransactionManagement
+@EnableTransactionManagement  //开启事务管理
 public class ServerSystemApp {
 
     public static void main(String[] args) {
