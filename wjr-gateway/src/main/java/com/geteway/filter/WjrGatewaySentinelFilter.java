@@ -8,9 +8,11 @@ import com.alibaba.csp.sentinel.adapter.gateway.common.api.GatewayApiDefinitionM
 import com.alibaba.csp.sentinel.adapter.gateway.common.rule.GatewayFlowRule;
 import com.alibaba.csp.sentinel.adapter.gateway.common.rule.GatewayParamFlowItem;
 import com.alibaba.csp.sentinel.adapter.gateway.common.rule.GatewayRuleManager;
+import com.alibaba.csp.sentinel.adapter.gateway.zuul.fallback.ZuulBlockFallbackManager;
 import com.alibaba.csp.sentinel.adapter.gateway.zuul.filters.SentinelZuulErrorFilter;
 import com.alibaba.csp.sentinel.adapter.gateway.zuul.filters.SentinelZuulPostFilter;
 import com.alibaba.csp.sentinel.adapter.gateway.zuul.filters.SentinelZuulPreFilter;
+import com.geteway.fallback.WjrGatewayBlockFallbackProvider;
 import com.netflix.zuul.ZuulFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -26,10 +28,18 @@ import java.util.Set;
  *
  * Sentinel 1.6.0 引入了 Sentinel API Gateway Adapter Common 模块，此模块中包含网关限流的规则和自定义 API 的实体和管理逻辑：
  *
- * GatewayFlowRule：网关限流规则，针对 API Gateway 的场景定制的限流规则，可以针对不同 route 或自定义的 API 分组进行限流，支持针对请求中的参数、Header、来源 IP 等进行定制化的限流。
- * ApiDefinition：用户自定义的 API 定义分组，可以看做是一些 URL 匹配的组合。比如我们可以定义一个 API 叫 my_api，请求 path 模式为 /foo/** 和 /baz/** 的都归到 my_api 这个 API 分组下面。限流的时候可以针对这个自定义的 API 分组维度进行限流。
- * 回头看initGatewayRules方法，我们通过ApiDefinition定义了一个API分组，名称为captcha，匹配的URL为/auth/captcha；然后通过GatewayFlowRule指定了限流的规则。其中网关限流规则 GatewayFlowRule 的字段解释如下：
+ * GatewayFlowRule：网关限流规则，针对 API Gateway 的场景定制的限流规则，可以针对不同 route 或自定义的 API 分组进行限流，
+ * 支持针对请求中的参数、Header、来源 IP 等进行定制化的限流。
  *
+ * ApiDefinition：用户自定义的 API 定义分组，可以看做是一些 URL 匹配的组合。
+ * 比如我们可以定义一个 API 叫 my_api，请求 path 模式为 /foo/** 和 /baz/** 的都归到 my_api 这个 API 分组下面。
+ * 限流的时候可以针对这个自定义的 API 分组维度进行限流。
+ *
+ * 回头看initGatewayRules方法，我们通过ApiDefinition定义了一个API分组，名称为captcha，
+ * 匹配的URL为/auth/captcha；然后通过GatewayFlowRule指定了限流的规则。
+ *
+ *
+ * 其中网关限流规则 GatewayFlowRule 的字段解释如下：
  * resource：资源名称，可以是网关中的 route 名称或者用户自定义的 API 分组名称。
  * resourceMode：规则是针对 API Gateway 的 route（RESOURCE_MODE_ROUTE_ID）还是用户在 Sentinel 中定义的 API 分组（RESOURCE_MODE_CUSTOM_API_NAME），默认是 route。
  * grade：限流指标维度，同限流规则的 grade 字段。
@@ -69,6 +79,10 @@ public class WjrGatewaySentinelFilter {
 
     @PostConstruct
     public void doInit() {
+        //要让WjrGatewayBlockFallbackProvider生效，还需在上面定义的WjrGatewaySentinelFilter过滤器的doInit方法里通过,
+        //ZuulBlockFallbackManager.registerProvider设置它：
+        ZuulBlockFallbackManager.registerProvider(new WjrGatewayBlockFallbackProvider());
+
         initGatewayRules();
     }
 
@@ -80,14 +94,16 @@ public class WjrGatewaySentinelFilter {
         Set<ApiDefinition> definitions = new HashSet<>();
         Set<ApiPredicateItem> predicateItems = new HashSet<>();
 
+        //匹配的URL为:/auth/captcha
         predicateItems.add(new ApiPathPredicateItem().setPattern("/auth/captcha"));
+        //ApiDefinition：用户自定义的 API 定义分组，可以看做是一些 URL 匹配的组合
         ApiDefinition definition = new ApiDefinition("captcha")
                 .setPredicateItems(predicateItems);
         definitions.add(definition);
         GatewayApiDefinitionManager.loadApiDefinitions(definitions);
 
+        //通过GatewayFlowRule指定了限流的规则。
         Set<GatewayFlowRule> rules = new HashSet<>();
-
         rules.add(new GatewayFlowRule("captcha")
                 .setResourceMode(SentinelGatewayConstants.RESOURCE_MODE_CUSTOM_API_NAME)
                 .setParamItem(
@@ -99,7 +115,10 @@ public class WjrGatewaySentinelFilter {
                 )
                 .setCount(10)
                 .setIntervalSec(60)
+                //上面的限流规则为：60秒内同一个IP，同一个key最多访问10次
         );
+        //用户可以通过 GatewayRuleManager.loadRules(rules) 手动加载网关规则，
+        // 或通过 GatewayRuleManager.register2Property(property) 注册动态规则源动态推送（推荐方式）
         GatewayRuleManager.loadRules(rules);
     }
 }
