@@ -2,9 +2,9 @@ server:
   port: 8202
 
 spring:
-  #关闭数据库自动装配
+  #关闭多数据源自动装配
   autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration
   application:
     name: wjr-server-test
 
