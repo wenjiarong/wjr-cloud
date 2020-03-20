@@ -19,6 +19,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 /**
  * 定义一个过滤器，用于拦截请求并校验验证码的正确性
@@ -49,10 +51,17 @@ public class ValidateCodeFilter extends OncePerRequestFilter {
      */
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
+
+        String header = httpServletRequest.getHeader("Authorization");
+        //获取了ClientId后，我们判断ClientId是否为swagger，是的话无需进行图形验证码校验
+        String clientId = getClientId(header, httpServletRequest);
+
         RequestMatcher matcher = new AntPathRequestMatcher("/oauth/token", HttpMethod.POST.toString());
         if (matcher.matches(httpServletRequest)
-                && StringUtils.equalsIgnoreCase(httpServletRequest.getParameter("grant_type"), "password")) {
+                && StringUtils.equalsIgnoreCase(httpServletRequest.getParameter("grant_type"), "password")
+                && !StringUtils.equalsAnyIgnoreCase(clientId, "swagger")) {
             try {
+                //校验验证码
                 validateCode(httpServletRequest);
                 filterChain.doFilter(httpServletRequest, httpServletResponse);
             } catch (ValidateCodeException e) {
@@ -66,9 +75,29 @@ public class ValidateCodeFilter extends OncePerRequestFilter {
         }
     }
 
+    //校验验证码
     private void validateCode(HttpServletRequest httpServletRequest) throws ValidateCodeException {
         String code = httpServletRequest.getParameter("code");
         String key = httpServletRequest.getParameter("key");
         validateCodeService.check(key, code);
     }
+
+    //getClientId这个方法用于从请求头部获取ClientId信息，这段代码是从Spring Cloud OAuth2源码中拷贝过来的
+    private String getClientId(String header, HttpServletRequest request) {
+        String clientId = "";
+        try {
+            byte[] base64Token = header.substring(6).getBytes(StandardCharsets.UTF_8);
+            byte[] decoded;
+            decoded = Base64.getDecoder().decode(base64Token);
+
+            String token = new String(decoded, StandardCharsets.UTF_8);
+            int delim = token.indexOf(":");
+            if (delim != -1) {
+                clientId = new String[]{token.substring(0, delim), token.substring(delim + 1)}[0];
+            }
+        } catch (Exception ignore) {
+        }
+        return clientId;
+    }
+
 }

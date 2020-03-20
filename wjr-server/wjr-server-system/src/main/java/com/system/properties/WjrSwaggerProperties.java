@@ -15,4 +15,8 @@ public class WjrSwaggerProperties{
     private String license;
     private String licenseUrl;
 
+    private String grantUrl;
+    private String name;
+    private String scope;
+
 }

@@ -8,15 +8,17 @@ import com.system.properties.WjrSwaggerProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.OAuthBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
+import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -39,7 +41,9 @@ public class WjrWebConfigure {
                 .apis(RequestHandlerSelectors.basePackage(swagger.getBasePackage()))
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(apiInfo(swagger));
+                .apiInfo(apiInfo(swagger))
+                .securitySchemes(Collections.singletonList(securityScheme(swagger)))
+                .securityContexts(Collections.singletonList(securityContext(swagger)));
     }
 
     private ApiInfo apiInfo(WjrSwaggerProperties swagger) {
@@ -53,6 +57,10 @@ public class WjrWebConfigure {
     }
 
 
+    /**
+     * 分页拦截
+     * @return
+     */
     @Bean
     public PaginationInterceptor paginationInterceptor() {
         PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
@@ -60,5 +68,45 @@ public class WjrWebConfigure {
         sqlParserList.add(new BlockAttackSqlParser());
         paginationInterceptor.setSqlParserList(sqlParserList);
         return paginationInterceptor;
+    }
+
+
+    /**
+     *通过Docket的securitySchemes和securityContexts方法设置了安全策略和安全上下文
+     *
+     * Swagger的Docket对象可以配置securitySchemes和securityContexts：
+     * 1、securitySchemes：用于配置安全策略，比如配置认证模型，scope等内容；
+     * 2、securityContexts：用于配置安全上下文，只有配置了安全上下文的接口才能使用令牌获取资源。
+     *
+     *
+     * 在securityScheme方法中，我们通过OAuthBuilder对象构建了安全策略，
+     * 主要配置了认证类型为ResourceOwnerPasswordCredentialsGrant（即密码模式），
+     * 认证地址为http://localhost:8301/auth/oauth/token（即通过网关转发到认证服务器），
+     * scope为test，和wjr-auth模块里定义的一致。这个安全策略我们将其命名为wjr_oauth_swagger。
+     *
+     * 在securityContext方法中，我们通过wjr_oauth_swagger名称关联了上面定义的安全策略，
+     * 并且通过forPaths(PathSelectors.any())设置所有API接口都用这个安全上下文。
+     */
+    private SecurityScheme securityScheme(WjrSwaggerProperties swagger) {
+        GrantType grantType = new ResourceOwnerPasswordCredentialsGrant(swagger.getGrantUrl());
+
+        return new OAuthBuilder()
+                .name(swagger.getName())
+                .grantTypes(Collections.singletonList(grantType))
+                .scopes(Arrays.asList(scopes(swagger)))
+                .build();
+    }
+
+    private SecurityContext securityContext(WjrSwaggerProperties swagger) {
+        return SecurityContext.builder()
+                .securityReferences(Collections.singletonList(new SecurityReference(swagger.getName(), scopes(swagger))))
+                .forPaths(PathSelectors.any())
+                .build();
+    }
+
+    private AuthorizationScope[] scopes(WjrSwaggerProperties swagger) {
+        return new AuthorizationScope[]{
+                new AuthorizationScope(swagger.getScope(), "")
+        };
     }
 }
