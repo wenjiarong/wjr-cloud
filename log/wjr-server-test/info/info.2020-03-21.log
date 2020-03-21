@@ -1,0 +1,101 @@
+2020-03-21 14:34:59 INFO  [springAppName_IS_UNDEFINED,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$933b7d46] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:35:02 INFO  [wjr-server-test,,,] main com.test.ServerTestApp No active profile set, falling back to default profiles: default
+2020-03-21 14:35:03 INFO  [wjr-server-test,,,] main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-21 14:35:03 INFO  [wjr-server-test,,,] main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-03-21 14:35:03 INFO  [wjr-server-test,,,] main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.springframework.cloud.context.scope.GenericScope BeanFactory id=21b38409-06f9-3044-9ec0-c682dd368c0e
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'com.test.fegin.IHelloFegin' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$fcf4283] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7889b4b9' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$34a3e535] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$933b7d46] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8202 (http)
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8202"]
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-03-21 14:35:04 INFO  [wjr-server-test,,,] main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-03-21 14:35:05 INFO  [wjr-server-test,,,] main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-03-21 14:35:05 INFO  [wjr-server-test,,,] main org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2856 ms
+2020-03-21 14:35:05 INFO  [wjr-server-test,,,] main com.netflix.config.sources.URLConfigurationSource To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-21 14:35:05 INFO  [wjr-server-test,,,] main com.netflix.config.DynamicPropertyFactory DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@27ffd9f8
+2020-03-21 14:35:08 INFO  [wjr-server-test,,,] main com.netflix.config.sources.URLConfigurationSource To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-21 14:35:08 INFO  [wjr-server-test,,,] main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 14:35:09 INFO  [wjr-server-test,,,] main org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration 
+
+Using generated security password: c569d57e-a647-4d51-8557-b0d863e9a6c4
+
+2020-03-21 14:35:09 INFO  [wjr-server-test,,,] main org.springframework.security.web.DefaultSecurityFilterChain Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f803481, org.springframework.security.web.context.SecurityContextPersistenceFilter@20155dae, org.springframework.security.web.header.HeaderWriterFilter@1123d461, org.springframework.security.web.authentication.logout.LogoutFilter@7d80e1b3, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@9d2af36, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@417bfebd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6cb662e8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@408f70ab, org.springframework.security.web.session.SessionManagementFilter@7e2a76be, org.springframework.security.web.access.ExceptionTranslationFilter@5e763c07, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@14499b52]
+2020-03-21 14:35:09 INFO  [wjr-server-test,,,] main org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-03-21 14:35:11 INFO  [wjr-server-test,,,] main org.springframework.cloud.netflix.eureka.InstanceInfoFactory Setting initial instance status as: STARTING
+2020-03-21 14:35:11 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient Initializing Eureka in region us-east-1
+2020-03-21 14:35:12 INFO  [wjr-server-test,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using JSON encoding codec LegacyJacksonJson
+2020-03-21 14:35:12 INFO  [wjr-server-test,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using JSON decoding codec LegacyJacksonJson
+2020-03-21 14:35:12 INFO  [wjr-server-test,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using XML encoding codec XStreamXml
+2020-03-21 14:35:12 INFO  [wjr-server-test,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using XML decoding codec XStreamXml
+2020-03-21 14:35:13 INFO  [wjr-server-test,,,] main com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver Resolving eureka endpoints via configuration
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient Disable delta property : false
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient Single vip registry refresh property : null
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient Force full registry fetch : false
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient Application is null : false
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient Registered Applications size is zero : true
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient Application version is -1: true
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient Getting all instance registry info from the eureka server
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient The response status is 200
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient Starting heartbeat executor: renew interval is: 20
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.InstanceInfoReplicator InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient Discovery Client initialized at timestamp 1584772514439 with initial instances count: 1
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry Registering application WJR-SERVER-TEST with eureka with status UP
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.netflix.discovery.DiscoveryClient Saw local status change event StatusChangeEvent [timestamp=1584772514461, current=UP, previous=STARTING]
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] DiscoveryClient-InstanceInfoReplicator-0 com.netflix.discovery.DiscoveryClient DiscoveryClient_WJR-SERVER-TEST/DESKTOP-0NN556A:wjr-server-test:8202: registering service...
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8202"]
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] DiscoveryClient-InstanceInfoReplicator-0 com.netflix.discovery.DiscoveryClient DiscoveryClient_WJR-SERVER-TEST/DESKTOP-0NN556A:wjr-server-test:8202 - registration status: 204
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8202 (http) with context path ''
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration Updating port to 8202
+2020-03-21 14:35:14 INFO  [wjr-server-test,,,] main com.test.ServerTestApp Started ServerTestApp in 19.055 seconds (JVM running for 23.563)
+2020-03-21 14:35:16 INFO  [wjr-server-test,,,] RMI TCP Connection(1)-10.0.0.6 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 14:35:16 INFO  [wjr-server-test,,,] RMI TCP Connection(1)-10.0.0.6 org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2020-03-21 14:35:16 INFO  [wjr-server-test,,,] RMI TCP Connection(1)-10.0.0.6 org.springframework.web.servlet.DispatcherServlet Completed initialization in 15 ms
+2020-03-21 14:35:16 INFO  [wjr-server-test,,,] parallel-1 io.lettuce.core.EpollProvider Starting without optional epoll library
+2020-03-21 14:35:16 INFO  [wjr-server-test,,,] parallel-1 io.lettuce.core.KqueueProvider Starting without optional kqueue library
+2020-03-21 14:36:05 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 org.apache.http.impl.client.DefaultHttpClient I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://localhost:8001: The target server failed to respond
+2020-03-21 14:36:05 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 org.apache.http.impl.client.DefaultHttpClient Retrying request to {}->http://localhost:8001
+2020-03-21 14:36:05 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 org.apache.http.impl.client.DefaultHttpClient I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://localhost:8001: The target server failed to respond
+2020-03-21 14:36:05 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 org.apache.http.impl.client.DefaultHttpClient Retrying request to {}->http://localhost:8001
+2020-03-21 14:36:05 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 org.apache.http.impl.client.DefaultHttpClient I/O exception (java.net.SocketException) caught when processing request to {}->http://localhost:8001: Connection reset
+2020-03-21 14:36:05 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 org.apache.http.impl.client.DefaultHttpClient Retrying request to {}->http://localhost:8001
+2020-03-21 14:37:53 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Disable delta property : false
+2020-03-21 14:37:53 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Single vip registry refresh property : null
+2020-03-21 14:37:53 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Force full registry fetch : false
+2020-03-21 14:37:53 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application is null : false
+2020-03-21 14:37:53 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Registered Applications size is zero : true
+2020-03-21 14:37:53 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application version is -1: false
+2020-03-21 14:37:53 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Getting all instance registry info from the eureka server
+2020-03-21 14:37:53 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient The response status is 200
+2020-03-21 14:37:56 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Disable delta property : false
+2020-03-21 14:37:56 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Single vip registry refresh property : null
+2020-03-21 14:37:56 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Force full registry fetch : false
+2020-03-21 14:37:56 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application is null : false
+2020-03-21 14:37:56 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Registered Applications size is zero : true
+2020-03-21 14:37:56 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application version is -1: false
+2020-03-21 14:37:56 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Getting all instance registry info from the eureka server
+2020-03-21 14:37:56 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient The response status is 200
+2020-03-21 14:37:59 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Disable delta property : false
+2020-03-21 14:37:59 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Single vip registry refresh property : null
+2020-03-21 14:37:59 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Force full registry fetch : false
+2020-03-21 14:37:59 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application is null : false
+2020-03-21 14:37:59 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Registered Applications size is zero : true
+2020-03-21 14:37:59 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application version is -1: false
+2020-03-21 14:37:59 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Getting all instance registry info from the eureka server
+2020-03-21 14:37:59 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient The response status is 200
+2020-03-21 14:38:02 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Disable delta property : false
+2020-03-21 14:38:02 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Single vip registry refresh property : null
+2020-03-21 14:38:02 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Force full registry fetch : false
+2020-03-21 14:38:02 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application is null : false
+2020-03-21 14:38:02 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Registered Applications size is zero : true
+2020-03-21 14:38:02 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application version is -1: false
+2020-03-21 14:38:02 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Getting all instance registry info from the eureka server
+2020-03-21 14:38:02 INFO  [wjr-server-test,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient The response status is 200
+2020-03-21 14:38:06 INFO  [wjr-server-test,,,] DiscoveryClient-HeartbeatExecutor-0 com.netflix.discovery.DiscoveryClient DiscoveryClient_WJR-SERVER-TEST/DESKTOP-0NN556A:wjr-server-test:8202 - Re-registering apps/WJR-SERVER-TEST
+2020-03-21 14:38:06 INFO  [wjr-server-test,,,] DiscoveryClient-HeartbeatExecutor-0 com.netflix.discovery.DiscoveryClient DiscoveryClient_WJR-SERVER-TEST/DESKTOP-0NN556A:wjr-server-test:8202: registering service...
+2020-03-21 14:38:06 INFO  [wjr-server-test,,,] DiscoveryClient-HeartbeatExecutor-0 com.netflix.discovery.DiscoveryClient DiscoveryClient_WJR-SERVER-TEST/DESKTOP-0NN556A:wjr-server-test:8202 - registration status: 204
