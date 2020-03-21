@@ -18,8 +18,8 @@ public class WjrAuthExceptionConfigure {
      *
      * 以@ConditionalOnMissingBean(name = "accessDeniedHandler")为例，
      * 当微服务系统的Spring IOC容器中没有名称为accessDeniedHandler的Bean的时候，
-     * 就将FebsAccessDeniedHandler注册为一个Bean。这样做的好处在于，
-     * 子系统可以自定义自个儿的资源服务器异常处理器，覆盖我们在febs-common通用模块里定义的
+     * 就将WjrAccessDeniedHandler注册为一个Bean。这样做的好处在于，
+     * 子系统可以自定义自个儿的资源服务器异常处理器，覆盖我们在wjr-common通用模块里定义的
      * @return
      */
 
