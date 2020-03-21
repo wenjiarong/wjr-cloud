@@ -1,0 +1,97 @@
+2020-03-21 14:43:01 INFO  [springAppName_IS_UNDEFINED,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$77e7bbbb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:43:03 INFO  [wjr-gateway,,,] main com.geteway.GatewayApp No active profile set, falling back to default profiles: default
+2020-03-21 14:43:04 INFO  [wjr-gateway,,,] main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-21 14:43:04 INFO  [wjr-gateway,,,] main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-03-21 14:43:04 INFO  [wjr-gateway,,,] main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 28ms. Found 0 repository interfaces.
+2020-03-21 14:43:06 INFO  [wjr-gateway,,,] main org.springframework.cloud.context.scope.GenericScope BeanFactory id=d0cc91e5-bb88-3153-8cae-8a4f6b25eed3
+2020-03-21 14:43:06 INFO  [wjr-gateway,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$77e7bbbb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:43:07 INFO  [wjr-gateway,,,] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8301 (http)
+2020-03-21 14:43:07 INFO  [wjr-gateway,,,] main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8301"]
+2020-03-21 14:43:07 INFO  [wjr-gateway,,,] main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-03-21 14:43:07 INFO  [wjr-gateway,,,] main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-03-21 14:43:07 INFO  [wjr-gateway,,,] main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2020-03-21 14:43:07 INFO  [wjr-gateway,,,] main org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 3956 ms
+2020-03-21 14:43:07 INFO  [wjr-gateway,,,] main com.netflix.config.sources.URLConfigurationSource To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-21 14:43:07 INFO  [wjr-gateway,,,] main com.netflix.config.DynamicPropertyFactory DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@7f642bf
+2020-03-21 14:43:16 INFO  [wjr-gateway,,,] main org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration 
+
+Using generated security password: c876fa02-4589-47f6-a155-20d36dcd2695
+
+2020-03-21 14:43:16 INFO  [wjr-gateway,,,] main org.springframework.security.web.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38ebc866, org.springframework.security.web.context.SecurityContextPersistenceFilter@113d0f75, org.springframework.security.web.header.HeaderWriterFilter@210d3a42, org.springframework.security.web.authentication.logout.LogoutFilter@3d718248, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@773f3360, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@aa8dce8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6adcf059, org.springframework.security.web.session.SessionManagementFilter@6aaa678d, org.springframework.security.web.access.ExceptionTranslationFilter@6e668322]
+2020-03-21 14:43:16 INFO  [wjr-gateway,,,] main com.netflix.config.sources.URLConfigurationSource To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-21 14:43:17 INFO  [wjr-gateway,,,] main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 14:43:18 INFO  [wjr-gateway,,,] main org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-03-21 14:43:20 INFO  [wjr-gateway,,,] main org.springframework.cloud.netflix.zuul.ZuulFilterInitializer Starting filter initializer
+2020-03-21 14:43:20 INFO  [wjr-gateway,,,] main org.springframework.cloud.netflix.eureka.InstanceInfoFactory Setting initial instance status as: STARTING
+2020-03-21 14:43:20 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient Initializing Eureka in region us-east-1
+2020-03-21 14:43:20 INFO  [wjr-gateway,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using JSON encoding codec LegacyJacksonJson
+2020-03-21 14:43:20 INFO  [wjr-gateway,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using JSON decoding codec LegacyJacksonJson
+2020-03-21 14:43:20 INFO  [wjr-gateway,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using XML encoding codec XStreamXml
+2020-03-21 14:43:20 INFO  [wjr-gateway,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using XML decoding codec XStreamXml
+2020-03-21 14:43:21 INFO  [wjr-gateway,,,] main com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver Resolving eureka endpoints via configuration
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient Disable delta property : false
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient Single vip registry refresh property : null
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient Force full registry fetch : false
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient Application is null : false
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient Registered Applications size is zero : true
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient Application version is -1: true
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient Getting all instance registry info from the eureka server
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient The response status is 200
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient Starting heartbeat executor: renew interval is: 20
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.InstanceInfoReplicator InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient Discovery Client initialized at timestamp 1584773002895 with initial instances count: 0
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry Registering application WJR-GATEWAY with eureka with status UP
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main com.netflix.discovery.DiscoveryClient Saw local status change event StatusChangeEvent [timestamp=1584773002899, current=UP, previous=STARTING]
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] DiscoveryClient-InstanceInfoReplicator-0 com.netflix.discovery.DiscoveryClient DiscoveryClient_WJR-GATEWAY/DESKTOP-0NN556A:wjr-gateway:8301: registering service...
+2020-03-21 14:43:22 INFO  [wjr-gateway,,,] main org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8301"]
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8301 (http) with context path ''
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration Updating port to 8301
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.geteway.GatewayApp Started GatewayApp in 25.362 seconds (JVM running for 27.597)
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] DiscoveryClient-InstanceInfoReplicator-0 com.netflix.discovery.DiscoveryClient DiscoveryClient_WJR-GATEWAY/DESKTOP-0NN556A:wjr-gateway:8301 - registration status: 204
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.config.ChainedDynamicProperty Flipping property: wjr-auth.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.util.concurrent.ShutdownEnabledTimer Shutdown hook installed for: NFLoadBalancer-PingTimer-wjr-auth
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.loadbalancer.BaseLoadBalancer Client: wjr-auth instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=wjr-auth,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.loadbalancer.DynamicServerListLoadBalancer Using serverListUpdater PollingServerListUpdater
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.loadbalancer.DynamicServerListLoadBalancer DynamicServerListLoadBalancer for client wjr-auth initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=wjr-auth,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@578781f7
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.config.ChainedDynamicProperty Flipping property: wjr-server-system.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.util.concurrent.ShutdownEnabledTimer Shutdown hook installed for: NFLoadBalancer-PingTimer-wjr-server-system
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.loadbalancer.BaseLoadBalancer Client: wjr-server-system instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=wjr-server-system,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.loadbalancer.DynamicServerListLoadBalancer Using serverListUpdater PollingServerListUpdater
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.loadbalancer.DynamicServerListLoadBalancer DynamicServerListLoadBalancer for client wjr-server-system initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=wjr-server-system,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@1be3e952
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.config.ChainedDynamicProperty Flipping property: wjr-server-test.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.util.concurrent.ShutdownEnabledTimer Shutdown hook installed for: NFLoadBalancer-PingTimer-wjr-server-test
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.loadbalancer.BaseLoadBalancer Client: wjr-server-test instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=wjr-server-test,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.loadbalancer.DynamicServerListLoadBalancer Using serverListUpdater PollingServerListUpdater
+2020-03-21 14:43:23 INFO  [wjr-gateway,,,] main com.netflix.loadbalancer.DynamicServerListLoadBalancer DynamicServerListLoadBalancer for client wjr-server-test initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=wjr-server-test,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@4fb42efa
+2020-03-21 14:43:24 INFO  [wjr-gateway,,,] RMI TCP Connection(3)-10.0.0.6 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 14:43:24 INFO  [wjr-gateway,,,] RMI TCP Connection(3)-10.0.0.6 org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2020-03-21 14:43:24 INFO  [wjr-gateway,,,] RMI TCP Connection(3)-10.0.0.6 org.springframework.web.servlet.DispatcherServlet Completed initialization in 14 ms
+2020-03-21 14:43:25 INFO  [wjr-gateway,,,] parallel-1 io.lettuce.core.EpollProvider Starting without optional epoll library
+2020-03-21 14:43:25 INFO  [wjr-gateway,,,] parallel-1 io.lettuce.core.KqueueProvider Starting without optional kqueue library
+2020-03-21 14:43:25 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Disable delta property : false
+2020-03-21 14:43:25 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Single vip registry refresh property : null
+2020-03-21 14:43:25 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Force full registry fetch : false
+2020-03-21 14:43:25 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application is null : false
+2020-03-21 14:43:25 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Registered Applications size is zero : true
+2020-03-21 14:43:25 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application version is -1: false
+2020-03-21 14:43:25 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Getting all instance registry info from the eureka server
+2020-03-21 14:43:25 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient The response status is 200
+2020-03-21 14:43:28 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Disable delta property : false
+2020-03-21 14:43:28 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Single vip registry refresh property : null
+2020-03-21 14:43:28 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Force full registry fetch : false
+2020-03-21 14:43:28 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application is null : false
+2020-03-21 14:43:28 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Registered Applications size is zero : true
+2020-03-21 14:43:28 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application version is -1: false
+2020-03-21 14:43:28 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Getting all instance registry info from the eureka server
+2020-03-21 14:43:28 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient The response status is 200
+2020-03-21 14:43:31 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Disable delta property : false
+2020-03-21 14:43:31 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Single vip registry refresh property : null
+2020-03-21 14:43:31 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Force full registry fetch : false
+2020-03-21 14:43:31 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application is null : false
+2020-03-21 14:43:31 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Registered Applications size is zero : true
+2020-03-21 14:43:31 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Application version is -1: false
+2020-03-21 14:43:31 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient Getting all instance registry info from the eureka server
+2020-03-21 14:43:31 INFO  [wjr-gateway,,,] DiscoveryClient-CacheRefreshExecutor-0 com.netflix.discovery.DiscoveryClient The response status is 200
+2020-03-21 14:43:54 INFO  [wjr-gateway,,,] PollingServerListUpdater-1 com.netflix.config.ChainedDynamicProperty Flipping property: wjr-auth.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-03-21 14:44:24 INFO  [wjr-gateway,,,] PollingServerListUpdater-1 com.netflix.config.ChainedDynamicProperty Flipping property: wjr-server-system.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-03-21 14:44:24 INFO  [wjr-gateway,,,] PollingServerListUpdater-0 com.netflix.config.ChainedDynamicProperty Flipping property: wjr-server-test.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647

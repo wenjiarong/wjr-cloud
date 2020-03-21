@@ -1,0 +1,50 @@
+2020-03-21 14:42:55 INFO  [springAppName_IS_UNDEFINED,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$519a6aaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:42:58 INFO  [wjr-eureka,,,] main com.eureka.EurekaApp No active profile set, falling back to default profiles: default
+2020-03-21 14:42:59 INFO  [wjr-eureka,,,] main org.springframework.cloud.context.scope.GenericScope BeanFactory id=734b1a83-54a3-3fe2-b7b1-31487776eac4
+2020-03-21 14:43:00 INFO  [wjr-eureka,,,] main org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$519a6aaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-21 14:43:00 INFO  [wjr-eureka,,,] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8001 (http)
+2020-03-21 14:43:00 INFO  [wjr-eureka,,,] main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8001"]
+2020-03-21 14:43:00 INFO  [wjr-eureka,,,] main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2020-03-21 14:43:00 INFO  [wjr-eureka,,,] main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-03-21 14:43:00 INFO  [wjr-eureka,,,] main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/register] Initializing Spring embedded WebApplicationContext
+2020-03-21 14:43:00 INFO  [wjr-eureka,,,] main org.springframework.web.context.ContextLoader Root WebApplicationContext: initialization completed in 1950 ms
+2020-03-21 14:43:00 INFO  [wjr-eureka,,,] main com.netflix.config.sources.URLConfigurationSource To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-21 14:43:00 INFO  [wjr-eureka,,,] main com.netflix.config.DynamicPropertyFactory DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3daf03d8
+2020-03-21 14:43:03 INFO  [wjr-eureka,,,] main com.sun.jersey.server.impl.application.WebApplicationImpl Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
+2020-03-21 14:43:03 INFO  [wjr-eureka,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using JSON encoding codec LegacyJacksonJson
+2020-03-21 14:43:03 INFO  [wjr-eureka,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using JSON decoding codec LegacyJacksonJson
+2020-03-21 14:43:03 INFO  [wjr-eureka,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using XML encoding codec XStreamXml
+2020-03-21 14:43:03 INFO  [wjr-eureka,,,] main com.netflix.discovery.provider.DiscoveryJerseyProvider Using XML decoding codec XStreamXml
+2020-03-21 14:43:04 INFO  [wjr-eureka,,,] main org.springframework.security.web.DefaultSecurityFilterChain Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c62d2ad, org.springframework.security.web.context.SecurityContextPersistenceFilter@45d46254, org.springframework.security.web.header.HeaderWriterFilter@2b80497f, org.springframework.security.web.csrf.CsrfFilter@56f84c9b, org.springframework.security.web.authentication.logout.LogoutFilter@35cbeb54, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2842c098, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@35d88a54, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@651caa2e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@79144d0e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@460e5ffe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2986427e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@433ae0b0, org.springframework.security.web.session.SessionManagementFilter@4c000cc4, org.springframework.security.web.access.ExceptionTranslationFilter@13662609, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4805069b]
+2020-03-21 14:43:04 INFO  [wjr-eureka,,,] main com.netflix.config.sources.URLConfigurationSource To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-21 14:43:04 INFO  [wjr-eureka,,,] main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 14:43:05 INFO  [wjr-eureka,,,] main org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main org.springframework.cloud.netflix.eureka.InstanceInfoFactory Setting initial instance status as: STARTING
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main com.netflix.discovery.DiscoveryClient Initializing Eureka in region us-east-1
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main com.netflix.discovery.DiscoveryClient Client configured to neither register nor query for data.
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main com.netflix.discovery.DiscoveryClient Discovery Client initialized at timestamp 1584772989109 with initial instances count: 0
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main com.netflix.eureka.DefaultEurekaServerContext Initializing ...
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main com.netflix.eureka.registry.AbstractInstanceRegistry Finished initializing remote region registries. All known remote regions: []
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main com.netflix.eureka.DefaultEurekaServerContext Initialized
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry Registering application WJR-EUREKA with eureka with status UP
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] Thread-38 org.springframework.cloud.netflix.eureka.server.EurekaServerBootstrap Setting the eureka configuration..
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] Thread-38 org.springframework.cloud.netflix.eureka.server.EurekaServerBootstrap Eureka data center value eureka.datacenter is not set, defaulting to default
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] Thread-38 org.springframework.cloud.netflix.eureka.server.EurekaServerBootstrap Eureka environment value eureka.environment is not set, defaulting to test
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8001"]
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] Thread-38 org.springframework.cloud.netflix.eureka.server.EurekaServerBootstrap isAws returned false
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] Thread-38 org.springframework.cloud.netflix.eureka.server.EurekaServerBootstrap Initialized server context
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] Thread-38 com.netflix.eureka.registry.PeerAwareInstanceRegistryImpl Got 1 instances from neighboring DS node
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] Thread-38 com.netflix.eureka.registry.PeerAwareInstanceRegistryImpl Renew threshold is: 1
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] Thread-38 com.netflix.eureka.registry.PeerAwareInstanceRegistryImpl Changing status to UP
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] Thread-38 org.springframework.cloud.netflix.eureka.server.EurekaServerInitializerConfiguration Started Eureka Server
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8001 (http) with context path '/register'
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration Updating port to 8001
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] main com.eureka.EurekaApp Started EurekaApp in 18.476 seconds (JVM running for 20.147)
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] RMI TCP Connection(3)-10.0.0.6 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/register] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] RMI TCP Connection(3)-10.0.0.6 org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+2020-03-21 14:43:09 INFO  [wjr-eureka,,,] RMI TCP Connection(3)-10.0.0.6 org.springframework.web.servlet.DispatcherServlet Completed initialization in 11 ms
+2020-03-21 14:43:23 INFO  [wjr-eureka,,,] http-nio-8001-exec-2 com.netflix.eureka.registry.AbstractInstanceRegistry Registered instance WJR-GATEWAY/DESKTOP-0NN556A:wjr-gateway:8301 with status UP (replication=false)
+2020-03-21 14:43:30 INFO  [wjr-eureka,,,] http-nio-8001-exec-6 com.netflix.eureka.registry.AbstractInstanceRegistry Registered instance WJR-AUTH/DESKTOP-0NN556A:wjr-auth:8101 with status UP (replication=false)
+2020-03-21 14:43:34 INFO  [wjr-eureka,,,] http-nio-8001-exec-10 com.netflix.eureka.registry.AbstractInstanceRegistry Registered instance WJR-SERVER-SYSTEM/DESKTOP-0NN556A:wjr-server-system:8201 with status UP (replication=false)
+2020-03-21 14:43:36 INFO  [wjr-eureka,,,] http-nio-8001-exec-4 com.netflix.eureka.registry.AbstractInstanceRegistry Registered instance WJR-SERVER-TEST/DESKTOP-0NN556A:wjr-server-test:8202 with status UP (replication=false)
+2020-03-21 14:44:09 INFO  [wjr-eureka,,,] Eureka-EvictionTimer com.netflix.eureka.registry.AbstractInstanceRegistry Running the evict task with compensationTime 0ms
