@@ -3,8 +3,9 @@ server:
 
 spring:
   #关闭数据库自动装配
+  #关闭Redis自动装配
   autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
   application:
     name: wjr-gateway
 
@@ -17,7 +18,7 @@ eureka:
     instance-info-replication-interval-seconds: 30
     registry-fetch-interval-seconds: 3
     serviceUrl:
-      defaultZone: http://wjr:123456@localhost:8001/register/eureka/
+      defaultZone: http://wjr:123456@${wjr-register}:8001/register/eureka/
 
 zuul:
   #要让我们自定义的Zuul异常过滤器生效，还需要在wjr-gateway的配置文件中添加如下配置，让默认的异常过滤器失效：

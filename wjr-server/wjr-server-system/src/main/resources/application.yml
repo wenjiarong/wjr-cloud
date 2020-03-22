@@ -2,6 +2,9 @@ server:
   port: 8201
 
 spring:
+  #关闭Redis自动装配
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
   application:
     name: wjr-server-system
   datasource:
@@ -23,7 +26,7 @@ spring:
           username: root
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://localhost:3306/wjr_cloud?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+          url: jdbc:mysql://${mysql.url}:3306/wjr_cloud?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
 
 eureka:
   instance:
@@ -33,13 +36,13 @@ eureka:
     fetch-registry: true
     instance-info-replication-interval-seconds: 30
     serviceUrl:
-      defaultZone: http://wjr:123456@localhost:8001/register/eureka/
+      defaultZone: http://wjr:123456@${wjr-register}:8001/register/eureka/
 
 security:
   oauth2:
     resource:
       id: ${spring.application.name}
-      user-info-uri: http://localhost:8301/auth/user
+      user-info-uri: http://${wjr-gateway}:8301/auth/user
 
 #user-info-uri路径为http://localhost:8301/auth/user，通过微服务网关，
 #该请求将被转发到http://localhost:8101/user。该配置的作用主要有两个：

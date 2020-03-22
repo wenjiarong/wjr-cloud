@@ -14,7 +14,6 @@
         <module>wjr-gateway</module>
         <module>wjr-server</module>
         <module>wjr-common</module>
-        <module>wjr-common</module>
     </modules>
 
     <parent>
