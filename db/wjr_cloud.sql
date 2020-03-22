@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80011
 File Encoding         : 65001
 
-Date: 2020-03-21 17:50:38
+Date: 2020-03-22 22:21:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -57,7 +57,7 @@ CREATE TABLE `t_menu` (
 -- Records of t_menu
 -- ----------------------------
 INSERT INTO `t_menu` VALUES ('1', '0', '系统管理', '/system', 'Layout', null, 'el-icon-set-up', '0', '1', '2017-12-27 16:39:07', '2019-07-20 16:19:04');
-INSERT INTO `t_menu` VALUES ('2', '1', '用户管理', '/system/user', 'febs/system/user/Index', 'user:view', '', '0', '1', '2017-12-27 16:47:13', '2019-01-22 06:45:55');
+INSERT INTO `t_menu` VALUES ('2', '1', '用户管理', '/system/user', 'wjr/system/user/Index', 'user:view', '', '0', '1', '2017-12-27 16:47:13', '2019-01-22 06:45:55');
 INSERT INTO `t_menu` VALUES ('3', '2', '新增用户', '', '', 'user:add', null, '1', null, '2017-12-27 17:02:58', null);
 INSERT INTO `t_menu` VALUES ('4', '2', '修改用户', '', '', 'user:update', null, '1', null, '2017-12-27 17:04:07', null);
 INSERT INTO `t_menu` VALUES ('5', '2', '删除用户', '', '', 'user:delete', null, '1', null, '2017-12-27 17:04:58', null);
@@ -123,7 +123,7 @@ CREATE TABLE `t_user` (
 -- Records of t_user
 -- ----------------------------
 INSERT INTO `t_user` VALUES ('1', 'wenjiarong', '$2a$10$gzhiUb1ldc1Rf3lka4k/WOoFKKGPepHSzJxzcPSN5/65SzkMdc.SK', '1', '631041490@qq.com', '17788888888', '1', '2019-06-14 20:39:22', '2020-03-20 16:16:32', '2019-08-02 15:57:00', '1', 'default.jpg', '我是帅比');
-INSERT INTO `t_user` VALUES ('2', 'wenjiahua', '$2a$10$vBJrmPQ9ud7GdbkIu3iDk.7aDr.x69PNFXFv6twyISMVnydCPjVqe', null, null, null, '1', '2020-03-20 16:02:39', null, null, '1', 'default.jpg', null);
+INSERT INTO `t_user` VALUES ('2', 'wenjiahua', '$2a$10$vBJrmPQ9ud7GdbkIu3iDk.7aDr.x69PNFXFv6twyISMVnydCPjVqe', null, '631041490@qq.com', '18126670755', '1', '2020-03-20 16:02:39', '2020-03-22 11:14:41', null, '1', 'default.jpg', null);
 
 -- ----------------------------
 -- Table structure for t_user_role
@@ -137,5 +137,5 @@ CREATE TABLE `t_user_role` (
 -- ----------------------------
 -- Records of t_user_role
 -- ----------------------------
-INSERT INTO `t_user_role` VALUES ('2', '1');
 INSERT INTO `t_user_role` VALUES ('1', '1');
+INSERT INTO `t_user_role` VALUES ('2', '1');
