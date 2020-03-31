@@ -2,10 +2,23 @@ server:
   port: 8202
 
 spring:
-  autoconfigure:
-    #关闭Redis自动装配
-    #关闭多数据源自动装配
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration,org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+  datasource:
+    dynamic:
+      p6spy: true
+      hikari:
+        connection-timeout: 30000
+        max-lifetime: 1800000
+        max-pool-size: 15
+        min-idle: 5
+        connection-test-query: select 1
+        pool-name: wjrHikariCP
+      primary: base
+      datasource:
+        base:
+          username: root
+          password: root
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://${mysql.url}:3306/wjr_cloud?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
   application:
     name: wjr-server-test
 
@@ -34,3 +47,16 @@ feign:
 #请求拦截器能够顺利获取到令牌,这样做会把SecurityContext对象从你当前主线程传输到Hystrix线程。
 hystrix:
   shareSecurityContext: true
+
+mybatis-plus:
+  type-aliases-package: com.common.entity.system
+  mapper-locations: classpath:mapper/*/*.xml
+  configuration:
+    jdbc-type-for-null: null
+  global-config:
+    banner: false
+
+rocketmq:
+  name-server: ${rocketmq.url}:9876
+  producer:
+    group: test-group

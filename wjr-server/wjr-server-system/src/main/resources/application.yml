@@ -19,7 +19,7 @@ spring:
         max-pool-size: 15
         min-idle: 5
         connection-test-query: select 1
-        pool-name: FebsHikariCP
+        pool-name: wjrHikariCP
       primary: base
       datasource:
         base:
@@ -56,3 +56,8 @@ mybatis-plus:
     jdbc-type-for-null: null
   global-config:
     banner: false
+
+rocketmq:
+  name-server: ${rocketmq.url}:9876
+  producer:
+    group: test-group

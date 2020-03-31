@@ -10,10 +10,42 @@ Target Server Type    : MYSQL
 Target Server Version : 80011
 File Encoding         : 65001
 
-Date: 2020-03-22 22:21:11
+Date: 2020-03-31 22:44:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for oauth_access_token
+-- ----------------------------
+DROP TABLE IF EXISTS `oauth_access_token`;
+CREATE TABLE `oauth_access_token` (
+  `token_id` varchar(256) DEFAULT NULL,
+  `token` blob,
+  `authentication_id` varchar(256) DEFAULT NULL,
+  `user_name` varchar(256) DEFAULT NULL,
+  `client_id` varchar(256) DEFAULT NULL,
+  `authentication` blob,
+  `refresh_token` varchar(256) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oauth_access_token
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for oauth_refresh_token
+-- ----------------------------
+DROP TABLE IF EXISTS `oauth_refresh_token`;
+CREATE TABLE `oauth_refresh_token` (
+  `token_id` varchar(256) DEFAULT NULL,
+  `token` blob,
+  `authentication` blob
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of oauth_refresh_token
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_dept
@@ -97,6 +129,43 @@ INSERT INTO `t_role_menu` VALUES ('1', '2');
 INSERT INTO `t_role_menu` VALUES ('1', '3');
 INSERT INTO `t_role_menu` VALUES ('1', '4');
 INSERT INTO `t_role_menu` VALUES ('1', '5');
+
+-- ----------------------------
+-- Table structure for t_trade_log
+-- ----------------------------
+DROP TABLE IF EXISTS `t_trade_log`;
+CREATE TABLE `t_trade_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `goods_id` int(11) NOT NULL COMMENT '商品ID',
+  `goods_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '商品名称',
+  `status` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '状态',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of t_trade_log
+-- ----------------------------
+INSERT INTO `t_trade_log` VALUES ('1', '1', '跑车', '下单并支付成功', '2020-03-31 19:20:09');
+INSERT INTO `t_trade_log` VALUES ('2', '1', '跑车', '打包完毕，开始物流配送！', '2020-03-31 19:20:42');
+INSERT INTO `t_trade_log` VALUES ('3', '1', '雷克萨斯', '下单并支付成功', '2020-03-31 19:49:44');
+INSERT INTO `t_trade_log` VALUES ('4', '1', '雷克萨斯', '打包完毕，开始物流配送！', '2020-03-31 19:49:45');
+
+-- ----------------------------
+-- Table structure for t_transaction_log
+-- ----------------------------
+DROP TABLE IF EXISTS `t_transaction_log`;
+CREATE TABLE `t_transaction_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `transaction_Id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '事务id',
+  `remark` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '备注',
+  PRIMARY KEY (`id`,`transaction_Id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Records of t_transaction_log
+-- ----------------------------
+INSERT INTO `t_transaction_log` VALUES ('1', '67653b6e-a078-4369-828d-260bf6154271', '事务ID为67653b6e-a078-4369-828d-260bf6154271的本地事务执行成功');
 
 -- ----------------------------
 -- Table structure for t_user

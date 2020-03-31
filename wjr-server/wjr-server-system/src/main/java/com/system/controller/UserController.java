@@ -20,7 +20,7 @@ import java.util.Map;
 @Slf4j
 @Validated
 @RestController
-@RequestMapping("user")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired

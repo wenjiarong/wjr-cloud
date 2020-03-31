@@ -13,6 +13,9 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ *  用户表
+ */
 @Data
 @TableName("t_user")
 public class SystemUser implements Serializable {
