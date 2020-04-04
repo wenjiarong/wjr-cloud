@@ -20,7 +20,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @WjrCloudApplication
 @EnableFeignClients
-@EnableDiscoveryClient
 @SpringBootApplication
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @MapperScan("com.test.mapper")

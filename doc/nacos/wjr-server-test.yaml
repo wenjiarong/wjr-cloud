@@ -18,20 +18,7 @@ spring:
           username: root
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://${mysql.url}:3306/wjr_cloud?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
-  application:
-    name: wjr-server-test
-
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 20
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    instance-info-replication-interval-seconds: 30
-    registry-fetch-interval-seconds: 3
-    serviceUrl:
-      defaultZone: http://wjr:123456@${wjr-register}:8001/register/eureka/
+          url: jdbc:mysql://${mysql.url}:13306/wjr_cloud?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
 
 security:
   oauth2:

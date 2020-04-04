@@ -3,14 +3,14 @@ Navicat MySQL Data Transfer
 
 Source Server         : 本地MySql
 Source Server Version : 80011
-Source Host           : localhost:3306
+Source Host           : 127.0.0.1:13306
 Source Database       : wjr_cloud
 
 Target Server Type    : MYSQL
 Target Server Version : 80011
 File Encoding         : 65001
 
-Date: 2020-03-31 22:44:09
+Date: 2020-04-05 00:33:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;

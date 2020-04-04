@@ -1,0 +1,66 @@
+server:
+  port: 8301
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: wjr-auth
+          uri: lb://wjr-auth
+          predicates:
+            - Path=/auth/**
+          #在网关中加入Hystrix熔断处理,添加Hystrix过滤器工厂
+          #通过- name: Hystrix指定添加Hystrix过滤器，
+          #通过name: authfallback指定HystrixCommandKey为authfallback，fallbackUri指定了回退的重定向地址
+          filters:
+            - name: Hystrix
+              args:
+                name: authfallback
+                fallbackUri: forward:/fallback/wjr-auth
+        - id: wjr-server-system
+          uri: lb://wjr-server-system
+          predicates:
+            - Path=/system/**
+          #在网关中加入Hystrix熔断处理,添加Hystrix过滤器工厂
+          filters:
+            - name: Hystrix
+              args:
+                name: systemfallback
+                fallbackUri: forward:/fallback/wjr-server-system
+        - id: wjr-server-test
+          uri: lb://wjr-server-test
+          predicates:
+            - Path=/test/**
+          #在网关中加入Hystrix熔断处理,添加Hystrix过滤器工厂
+          filters:
+            - name: Hystrix
+              args:
+                name: testfallback
+                fallbackUri: forward:/fallback/wjr-server-test
+      default-filters:
+        - StripPrefix=1
+# id，路由ID，保持唯一即可；
+# uri，路由的目标地址，可以指定为HTTP地址，也可以通过lb://{微服务名称}来指定。
+# lb为load balance的缩写，微服务名称为注册中心中对应的微服务名称。
+# 比如将uri配置为lb://wjr-auth的含义是，满足转发条件后，请求将均衡的转发到wjr-auth微服务上；
+# predicates就是谓词工厂。值为- Path=/auth/**表示请求Path以/auth开头的都会被匹配，然后转发到wjr-auth服务上；
+# filters为过滤器工厂，配置为- StripPrefix=1的意思是，请求转发前，将Path的内容截去前面一位。比如/auth/hello会被截取为/hello。
+# default-filters来指定全局的过滤器
+
+#配置了Hystrix过滤器后，可以添加超时时间，添加全局超时时间：
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway

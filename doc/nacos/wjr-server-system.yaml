@@ -5,8 +5,6 @@ spring:
   #关闭Redis自动装配
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
-  application:
-    name: wjr-server-system
   datasource:
     dynamic:
       #要开启p6spy功能,p6spy用于在控制台中打印MyBatis执行的SQL。
@@ -26,17 +24,8 @@ spring:
           username: root
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://${mysql.url}:3306/wjr_cloud?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+          url: jdbc:mysql://${mysql.url}:13306/wjr_cloud?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
 
-eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 20
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    instance-info-replication-interval-seconds: 30
-    serviceUrl:
-      defaultZone: http://wjr:123456@${wjr-register}:8001/register/eureka/
 
 security:
   oauth2:

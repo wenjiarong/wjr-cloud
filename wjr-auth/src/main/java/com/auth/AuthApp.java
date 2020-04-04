@@ -18,7 +18,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @EnableWjrLettuceRedis
 @WjrCloudApplication
-@EnableDiscoveryClient
 @SpringBootApplication
 @MapperScan("com.auth.mapper")
 public class AuthApp {

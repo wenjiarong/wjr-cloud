@@ -17,9 +17,9 @@ public class WjrOAuth2FeignConfigure {
     @Bean
     public RequestInterceptor oauth2FeignRequestInterceptor() {
         return requestTemplate -> {
-            // 添加 Zuul Token
-            String zuulToken = new String(Base64Utils.encode(WjrConstant.ZUUL_TOKEN_VALUE.getBytes()));
-            requestTemplate.header(WjrConstant.ZUUL_TOKEN_HEADER, zuulToken);
+            // 添加 gatewayToken
+            String gatewayToken = new String(Base64Utils.encode(WjrConstant.GATEWAY_TOKEN_VALUE.getBytes()));
+            requestTemplate.header(WjrConstant.GATEWAY_TOKEN_HEADER, gatewayToken);
 
             Object details = SecurityContextHolder.getContext().getAuthentication().getDetails();
             if (details instanceof OAuth2AuthenticationDetails) {
