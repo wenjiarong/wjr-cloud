@@ -56,7 +56,7 @@ public class BaseExceptionHandler {
      * 统一处理请求参数校验(普通传参)
      *
      * @param e ConstraintViolationException
-     * @return FebsResponse
+     * @return WjrResponse
      */
     @ExceptionHandler(value = ConstraintViolationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -77,7 +77,7 @@ public class BaseExceptionHandler {
      * 统一处理请求参数校验(实体对象传参)
      *
      * @param e BindException
-     * @return FebsResponse
+     * @return WjrResponse
      */
     @ExceptionHandler(BindException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
