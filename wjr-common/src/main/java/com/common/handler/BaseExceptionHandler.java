@@ -34,7 +34,7 @@ public class BaseExceptionHandler {
 
     @ExceptionHandler(value = WjrAuthException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public WjrResponse handleFebsAuthException(WjrAuthException e) {
+    public WjrResponse handleWjrAuthException(WjrAuthException e) {
         log.error("系统错误", e);
         return new WjrResponse().message(e.getMessage());
     }
