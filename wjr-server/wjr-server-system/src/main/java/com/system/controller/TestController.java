@@ -1,7 +1,7 @@
 package com.system.controller;
 
-import com.common.entity.system.TradeLog;
 import com.system.service.ITradeLogService;
+import com.test.entity.TradeLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

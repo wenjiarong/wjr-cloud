@@ -1,11 +1,11 @@
 package com.system.controller;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
-import com.common.entity.QueryRequest;
-import com.common.entity.WjrResponse;
-import com.common.entity.system.SystemUser;
+import com.common.query.QueryRequest;
+import com.common.response.WjrResponse;
 import com.common.exception.WjrException;
 import com.common.utils.WjrUtil;
+import com.system.entity.SystemUser;
 import com.system.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,4 +69,5 @@ public class UserController {
             throw new WjrException(message);
         }
     }
+
 }

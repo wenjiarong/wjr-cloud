@@ -1,7 +1,7 @@
 package com.auth.filter;
 
 import com.auth.service.ValidateCodeService;
-import com.common.entity.WjrResponse;
+import com.common.response.WjrResponse;
 import com.common.exception.ValidateCodeException;
 import com.common.utils.WjrUtil;
 import lombok.extern.slf4j.Slf4j;

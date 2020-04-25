@@ -1,7 +1,7 @@
 package com.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.common.entity.system.UserRole;
+import com.system.entity.UserRole;
 import org.springframework.data.repository.query.Param;
 
 public interface UserRoleMapper extends BaseMapper<UserRole> {

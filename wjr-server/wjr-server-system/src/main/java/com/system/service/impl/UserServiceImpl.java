@@ -5,9 +5,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.common.entity.QueryRequest;
-import com.common.entity.system.SystemUser;
-import com.common.entity.system.UserRole;
+import com.common.query.QueryRequest;
+import com.system.entity.SystemUser;
+import com.system.entity.UserRole;
 import com.system.mapper.UserMapper;
 import com.system.service.IUserRoleService;
 import com.system.service.IUserService;
@@ -81,4 +81,5 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SystemUser> impleme
             userRoleService.save(ur);
         });
     }
+
 }

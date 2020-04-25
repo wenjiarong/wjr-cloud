@@ -1,8 +1,8 @@
 package com.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.common.entity.router.VueRouter;
-import com.common.entity.system.Menu;
+import com.system.entity.Menu;
+import com.system.entity.router.VueRouter;
 
 import java.util.List;
 import java.util.Set;

@@ -1,6 +1,6 @@
 package com.common.handler;
 
-import com.common.entity.WjrResponse;
+import com.common.response.WjrResponse;
 import com.common.utils.WjrUtil;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.AccessDeniedException;

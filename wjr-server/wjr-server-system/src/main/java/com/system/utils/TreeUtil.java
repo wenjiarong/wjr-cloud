@@ -1,6 +1,6 @@
-package com.common.utils;
+package com.system.utils;
 
-import com.common.entity.router.VueRouter;
+import com.system.entity.router.VueRouter;
 
 import java.util.ArrayList;
 import java.util.List;

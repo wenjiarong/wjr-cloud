@@ -1,6 +1,6 @@
 package com.test.listener;
 
-import com.common.entity.system.TradeLog;
+import com.test.entity.TradeLog;
 import com.test.service.ITradeLogService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;

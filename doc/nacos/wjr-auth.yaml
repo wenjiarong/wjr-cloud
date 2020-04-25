@@ -36,7 +36,7 @@ spring:
     password: 123456
 
 mybatis-plus:
-  type-aliases-package: com.common.entity.system
+  type-aliases-package: com.system.*
   mapper-locations: classpath:mapper/*.xml
   configuration:
     jdbc-type-for-null: null

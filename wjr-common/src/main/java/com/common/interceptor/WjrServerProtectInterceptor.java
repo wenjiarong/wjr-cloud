@@ -2,7 +2,7 @@ package com.common.interceptor;
 
 import com.alibaba.fastjson.JSONObject;
 import com.common.constant.WjrConstant;
-import com.common.entity.WjrResponse;
+import com.common.response.WjrResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.MediaType;
 import org.springframework.util.Base64Utils;

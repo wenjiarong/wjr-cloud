@@ -1,10 +1,10 @@
 package com.system.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.common.entity.router.RouterMeta;
-import com.common.entity.router.VueRouter;
-import com.common.entity.system.Menu;
-import com.common.utils.TreeUtil;
+import com.system.entity.Menu;
+import com.system.entity.router.RouterMeta;
+import com.system.entity.router.VueRouter;
+import com.system.utils.TreeUtil;
 import com.system.mapper.MenuMapper;
 import com.system.service.IMenuService;
 import lombok.extern.slf4j.Slf4j;

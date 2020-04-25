@@ -1,6 +1,6 @@
 package com.common.handler;
 
-import com.common.entity.WjrResponse;
+import com.common.response.WjrResponse;
 import com.common.utils.WjrUtil;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;
@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class WjrAuthExceptionEntryPoint implements AuthenticationEntryPoint {
 
-    //HttpServletResponse.SC_FORBIDDEN，即403。
+    //HttpServletResponse.SC_UNAUTHORIZED，即401。
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response,
                          AuthenticationException authException) throws IOException {

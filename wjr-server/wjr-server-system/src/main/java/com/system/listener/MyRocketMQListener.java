@@ -1,10 +1,10 @@
 package com.system.listener;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.common.entity.system.TradeLog;
-import com.common.entity.system.TransactionLog;
 import com.system.mapper.TransactionLogMapper;
 import com.system.service.ITradeLogService;
+import com.test.entity.TradeLog;
+import com.test.entity.TransactionLog;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQTransactionListener;
 import org.apache.rocketmq.spring.core.RocketMQLocalTransactionListener;

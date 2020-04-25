@@ -1,16 +1,13 @@
 package com.system.controller;
 
-import com.common.entity.WjrResponse;
-import com.common.entity.router.VueRouter;
-import com.common.entity.system.Menu;
+import com.common.response.WjrResponse;
+import com.system.entity.Menu;
+import com.system.entity.router.VueRouter;
 import com.system.service.IMenuService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotBlank;
 import java.util.HashMap;
@@ -39,4 +36,5 @@ public class MenuController {
         result.put("permissions", userPermissions);
         return new WjrResponse().data(result);
     }
+
 }

@@ -2,9 +2,6 @@ server:
   port: 8201
 
 spring:
-  #关闭Redis自动装配
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
   datasource:
     dynamic:
       #要开启p6spy功能,p6spy用于在控制台中打印MyBatis执行的SQL。
@@ -25,6 +22,18 @@ spring:
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://${mysql.url}:13306/wjr_cloud?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+  redis:
+    database: 0
+    host: ${redis.url}
+    port: 6379
+    lettuce:
+      pool:
+        min-idle: 8
+        max-idle: 500
+        max-active: 2000
+        max-wait: 10000
+    timeout: 5000
+    password: 123456
 
 
 security:
@@ -39,9 +48,10 @@ security:
 #2、通过当前令牌获取对应的用户信息。
 
 mybatis-plus:
-  type-aliases-package: com.common.entity.system
-  mapper-locations: classpath:mapper/*/*.xml
+  type-aliases-package: com.system.*
+  mapper-locations: classpath:mapper/*.xml
   configuration:
+    cache-enabled: true
     jdbc-type-for-null: null
   global-config:
     banner: false

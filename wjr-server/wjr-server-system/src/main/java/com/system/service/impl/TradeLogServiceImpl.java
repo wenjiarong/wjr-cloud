@@ -1,11 +1,11 @@
 package com.system.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.common.entity.system.TradeLog;
-import com.common.entity.system.TransactionLog;
 import com.system.mapper.TradeLogMapper;
 import com.system.mapper.TransactionLogMapper;
 import com.system.service.ITradeLogService;
+import com.test.entity.TradeLog;
+import com.test.entity.TransactionLog;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.apache.rocketmq.spring.support.RocketMQHeaders;

@@ -1,4 +1,4 @@
-package com.common.entity;
+package com.common.response;
 
 import java.util.HashMap;
 

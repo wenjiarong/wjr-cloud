@@ -1,7 +1,7 @@
 package com.system.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.common.entity.system.UserRole;
+import com.system.entity.UserRole;
 import com.system.mapper.UserRoleMapper;
 import com.system.service.IUserRoleService;
 import org.springframework.stereotype.Service;

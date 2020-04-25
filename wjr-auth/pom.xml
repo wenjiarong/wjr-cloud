@@ -12,11 +12,6 @@
     <artifactId>wjr-auth</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.wjr</groupId>
-            <artifactId>wjr-common</artifactId>
-            <version>1.0.0.RELEASE</version>
-        </dependency>
         <!-- MyBatis Plus多数据源依赖 -->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -40,6 +35,11 @@
             <groupId>com.github.whvcse</groupId>
             <artifactId>easy-captcha</artifactId>
             <version>1.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wjr</groupId>
+            <artifactId>wjr-server-system-api</artifactId>
+            <version>1.0.0.RELEASE</version>
         </dependency>
     </dependencies>
 

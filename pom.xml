@@ -13,6 +13,7 @@
         <module>wjr-gateway</module>
         <module>wjr-server</module>
         <module>wjr-common</module>
+        <module>wjr-server-api</module>
     </modules>
 
     <parent>

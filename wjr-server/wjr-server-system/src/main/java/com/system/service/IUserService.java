@@ -2,8 +2,8 @@ package com.system.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.common.entity.QueryRequest;
-import com.common.entity.system.SystemUser;
+import com.common.query.QueryRequest;
+import com.system.entity.SystemUser;
 
 /**
  * 接口定义了用户模块的增删改查抽象方法,其中QueryRequest为通用查询参数类,用于接收前端上送的分页和排序信息
@@ -39,4 +39,5 @@ public interface IUserService extends IService<SystemUser> {
      * @param userIds 用户 id数组
      */
     void deleteUsers(String[] userIds);
+
 }

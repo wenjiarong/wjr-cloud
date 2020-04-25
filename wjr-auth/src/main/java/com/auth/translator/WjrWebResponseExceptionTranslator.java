@@ -1,6 +1,6 @@
 package com.auth.translator;
 
-import com.common.entity.WjrResponse;
+import com.common.response.WjrResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;

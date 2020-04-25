@@ -1,7 +1,7 @@
 package com.auth.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.common.entity.system.Menu;
+import com.system.entity.Menu;
 
 import java.util.List;
 

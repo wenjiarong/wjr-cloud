@@ -2,7 +2,7 @@ package com.geteway.filter;
 
 import com.alibaba.fastjson.JSONObject;
 import com.common.constant.WjrConstant;
-import com.common.entity.WjrResponse;
+import com.common.response.WjrResponse;
 import com.geteway.properties.WjrGatewayProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ArrayUtils;

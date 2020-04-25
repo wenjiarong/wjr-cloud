@@ -2,8 +2,8 @@ package com.auth.manager;
 
 import com.auth.mapper.MenuMapper;
 import com.auth.mapper.UserMapper;
-import com.common.entity.system.Menu;
-import com.common.entity.system.SystemUser;
+import com.system.entity.Menu;
+import com.system.entity.SystemUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,16 +21,6 @@ public class UserManager {
     public SystemUser findByName(String username) {
         return userMapper.findByName(username);
     }
-
-     /*public String findUserPermissions(String username) {
-        List<Menu> userPermissions = menuMapper.findUserPermissions(username);
-
-        List<String> perms = new ArrayList<>();
-        for (Menu m: userPermissions){
-            perms.add(m.getPerms());
-        }
-        return StringUtils.join(perms, ",");
-    }*/
 
     public String findUserPermissions(String username) {
         List<Menu> userPermissions = menuMapper.findUserPermissions(username);

@@ -1,7 +1,7 @@
 package com.auth.controller;
 
 import com.auth.service.ValidateCodeService;
-import com.common.entity.WjrResponse;
+import com.common.response.WjrResponse;
 import com.common.exception.ValidateCodeException;
 import com.common.exception.WjrAuthException;
 import org.apache.commons.lang3.StringUtils;

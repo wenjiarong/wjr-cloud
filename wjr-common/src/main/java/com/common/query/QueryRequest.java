@@ -1,4 +1,4 @@
-package com.common.entity;
+package com.common.query;
 
 import lombok.Data;
 import lombok.ToString;

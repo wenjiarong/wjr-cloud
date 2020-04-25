@@ -1,6 +1,6 @@
 package com.common.handler;
 
-import com.common.entity.WjrResponse;
+import com.common.response.WjrResponse;
 import com.common.exception.WjrAuthException;
 import com.common.exception.WjrException;
 import lombok.extern.slf4j.Slf4j;

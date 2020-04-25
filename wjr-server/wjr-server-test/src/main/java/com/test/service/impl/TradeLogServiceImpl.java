@@ -1,7 +1,7 @@
 package com.test.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.common.entity.system.TradeLog;
+import com.test.entity.TradeLog;
 import com.test.mapper.TradeLogMapper;
 import com.test.service.ITradeLogService;
 import lombok.extern.slf4j.Slf4j;

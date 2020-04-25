@@ -29,6 +29,17 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
         </dependency>
+        <dependency>
+            <artifactId>wjr-server-system-api</artifactId>
+            <groupId>com.wjr</groupId>
+            <version>1.0.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wjr</groupId>
+            <artifactId>wjr-server-test-api</artifactId>
+            <version>1.0.0.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>

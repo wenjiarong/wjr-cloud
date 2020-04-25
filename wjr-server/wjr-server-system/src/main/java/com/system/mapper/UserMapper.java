@@ -3,13 +3,11 @@ package com.system.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.common.entity.system.SystemUser;
 import com.system.cache.MybatisRedisCache;
+import com.system.entity.SystemUser;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
-@Repository
 @CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class)
 public interface UserMapper extends BaseMapper<SystemUser> {
 
@@ -21,4 +19,5 @@ public interface UserMapper extends BaseMapper<SystemUser> {
      * @return Ipage
      */
     IPage<SystemUser> findUserDetailPage(Page page, @Param("user") SystemUser user);
+
 }

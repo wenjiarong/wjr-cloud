@@ -1,4 +1,4 @@
-package com.common.entity.router;
+package com.system.entity.router;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
