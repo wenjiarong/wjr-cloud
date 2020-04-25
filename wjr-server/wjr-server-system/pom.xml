@@ -23,6 +23,12 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
+        <!-- 集成Lettuce，需引入commons-pool2Lettuce连接池(Spring Boot 2.0后推荐使用Lettuce来代替Jedis，
+        Lettuce基于Netty异步，拥有更好的性能，所以在生成验证码之前，我们先来整合Lettuce) -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
