@@ -1,9 +1,6 @@
 package com.test;
 
-import com.common.annotation.EnableWjrAuthExceptionHandler;
-import com.common.annotation.EnableWjrOauth2FeignClient;
-import com.common.annotation.EnableWjrServerProtect;
-import com.common.annotation.WjrCloudApplication;
+import com.common.annotation.*;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,6 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @MapperScan("com.test.mapper")
 @EnableTransactionManagement
+@EnableWjrLettuceRedis
 public class ServerTestApp {
 
     public static void main(String[] args) {

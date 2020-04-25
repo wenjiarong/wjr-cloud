@@ -1,12 +1,11 @@
 package com.common.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.connection.RedisServerCommands;
+import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -19,6 +18,55 @@ public class RedisService {
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
+
+    /**
+     * 获取所有符合规则的key
+     *
+     * @param pattern
+     * @return
+     */
+    public Set<String> keys(String pattern) {
+        try {
+            return this.redisTemplate.keys(pattern);
+        } catch (Exception var3) {
+            var3.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * 批量获取key
+     * @param keys
+     * @return
+     */
+    public Object multiGet(Collection<String> keys) {
+        try {
+            return this.redisTemplate.opsForValue().multiGet(keys);
+        } catch (Exception var3) {
+            var3.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * 批量删除key
+     *
+     * @param keys
+     */
+    public void multiDel(Collection<String> keys) {
+        if (keys != null && keys.size() > 0) {
+            this.redisTemplate.delete(keys);
+        }
+    }
+
+    /**
+     * 获取长度
+     * @return
+     */
+    public int getSize() {
+        Long size = redisTemplate.execute(RedisServerCommands::dbSize);
+        return size.intValue();
+    }
 
     /**
      * 指定缓存失效时间
