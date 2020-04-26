@@ -1,8 +1,9 @@
 package com.common.handler;
 
-import com.common.response.WjrResponse;
 import com.common.exception.WjrAuthException;
 import com.common.exception.WjrException;
+import com.common.response.R;
+import com.common.response.ResultCode;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
@@ -27,29 +28,29 @@ public class BaseExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public WjrResponse handleException(Exception e) {
+    public R handleException(Exception e) {
         log.error("系统内部异常，异常信息", e);
-        return new WjrResponse().message("系统内部异常");
+        return R.fail(ResultCode.INTERNAL_SERVER_ERROR.getCode(), ResultCode.INTERNAL_SERVER_ERROR.getMessage());
     }
 
     @ExceptionHandler(value = WjrAuthException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public WjrResponse handleWjrAuthException(WjrAuthException e) {
+    public R handleWjrAuthException(WjrAuthException e) {
         log.error("系统错误", e);
-        return new WjrResponse().message(e.getMessage());
+        return R.fail(ResultCode.INTERNAL_SERVER_ERROR.getCode(), ResultCode.INTERNAL_SERVER_ERROR.getMessage());
     }
-    
+
     @ExceptionHandler(value = AccessDeniedException.class)
     @ResponseStatus(HttpStatus.FORBIDDEN)
-    public WjrResponse handleAccessDeniedException(){
-        return new WjrResponse().message("没有权限访问该资源");
+    public R handleAccessDeniedException() {
+        return R.fail(ResultCode.REQ_REJECT.getCode(), ResultCode.REQ_REJECT.getMessage());
     }
 
     @ExceptionHandler(value = WjrException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public WjrResponse handleWjrException(WjrException e) {
+    public R handleWjrException(WjrException e) {
         log.error("系统错误", e);
-        return new WjrResponse().message(e.getMessage());
+        return R.fail(ResultCode.INTERNAL_SERVER_ERROR.getCode(), ResultCode.INTERNAL_SERVER_ERROR.getMessage());
     }
 
     /**
@@ -60,7 +61,7 @@ public class BaseExceptionHandler {
      */
     @ExceptionHandler(value = ConstraintViolationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public WjrResponse handleConstraintViolationException(ConstraintViolationException e) {
+    public R handleConstraintViolationException(ConstraintViolationException e) {
         StringBuilder message = new StringBuilder();
         Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
         for (ConstraintViolation<?> violation : violations) {
@@ -69,7 +70,7 @@ public class BaseExceptionHandler {
             message.append(pathArr[1]).append(violation.getMessage()).append(",");
         }
         message = new StringBuilder(message.substring(0, message.length() - 1));
-        return new WjrResponse().message(message.toString());
+        return R.fail(ResultCode.MSG_NOT_READABLE.getCode(), ResultCode.MSG_NOT_READABLE.getMessage());
     }
 
 
@@ -81,14 +82,14 @@ public class BaseExceptionHandler {
      */
     @ExceptionHandler(BindException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public WjrResponse handleBindException(BindException e) {
+    public R handleBindException(BindException e) {
         StringBuilder message = new StringBuilder();
         List<FieldError> fieldErrors = e.getBindingResult().getFieldErrors();
         for (FieldError error : fieldErrors) {
             message.append(error.getField()).append(error.getDefaultMessage()).append(",");
         }
         message = new StringBuilder(message.substring(0, message.length() - 1));
-        return new WjrResponse().message(message.toString());
+        return R.fail(ResultCode.MSG_NOT_READABLE.getCode(), ResultCode.MSG_NOT_READABLE.getMessage());
     }
 
 }

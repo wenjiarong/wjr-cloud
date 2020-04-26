@@ -1,9 +1,9 @@
 package com.auth.controller;
 
 import com.auth.service.ValidateCodeService;
-import com.common.response.WjrResponse;
 import com.common.exception.ValidateCodeException;
 import com.common.exception.WjrAuthException;
+import com.common.response.R;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
@@ -27,6 +27,7 @@ public class SecurityController {
 
     /**
      * 用于客户端调用生成验证码
+     *
      * @param request
      * @param response
      * @throws IOException
@@ -44,6 +45,7 @@ public class SecurityController {
 
     /**
      * 获取用户信息
+     *
      * @param principal
      * @return
      */
@@ -54,18 +56,18 @@ public class SecurityController {
 
     /**
      * 退出登录
+     *
      * @param request
      * @return
      * @throws WjrAuthException
      */
     @DeleteMapping("/signout")
-    public WjrResponse signout(HttpServletRequest request) throws WjrAuthException {
+    public R signout(HttpServletRequest request) throws WjrAuthException {
         String authorization = request.getHeader("Authorization");
         String token = StringUtils.replace(authorization, "bearer ", "");
-        WjrResponse wjrResponse = new WjrResponse();
         if (!consumerTokenServices.revokeToken(token)) {
             throw new WjrAuthException("退出登录失败");
         }
-        return wjrResponse.message("退出登录成功");
+        return R.data("退出登录成功");
     }
 }

@@ -2,7 +2,8 @@ package com.geteway.filter;
 
 import com.alibaba.fastjson.JSONObject;
 import com.common.constant.WjrConstant;
-import com.common.response.WjrResponse;
+import com.common.response.R;
+import com.common.response.ResultCode;
 import com.geteway.properties.WjrGatewayProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ArrayUtils;
@@ -30,7 +31,7 @@ import java.util.LinkedHashSet;
 import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.*;
 
 /**
- *  定义全局过滤器
+ * 定义全局过滤器
  */
 @Slf4j
 @Component
@@ -62,7 +63,8 @@ public class WjrGatewayRequestFilter implements GlobalFilter {
     }
 
     /**
-     *  在过滤器中实现了控制客户端禁止访问的资源功能，比如禁止客户端访问微服务的/actuator/**资源
+     * 在过滤器中实现了控制客户端禁止访问的资源功能，比如禁止客户端访问微服务的/actuator/**资源
+     *
      * @param request
      * @param response
      * @return
@@ -81,24 +83,24 @@ public class WjrGatewayRequestFilter implements GlobalFilter {
             }
         }
         if (!shouldForward) {
-            WjrResponse wjrResponse = new WjrResponse().message("该URI不允许外部访问");
-            return makeResponse(response, wjrResponse);
+            return makeResponse(response);
         }
         return null;
     }
 
-    private Mono<Void> makeResponse(ServerHttpResponse response, WjrResponse wjrResponse) {
+    private Mono<Void> makeResponse(ServerHttpResponse response) {
         response.setStatusCode(HttpStatus.FORBIDDEN);
         response.getHeaders().add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_UTF8_VALUE);
-        DataBuffer dataBuffer = response.bufferFactory().wrap(JSONObject.toJSONString(wjrResponse).getBytes());
+        DataBuffer dataBuffer = response.bufferFactory().wrap(JSONObject.toJSONString(R.fail(ResultCode.INTERNAL_SERVER_ERROR.getCode(), "该URI不允许外部访问")).getBytes());
         return response.writeWith(Mono.just(dataBuffer));
     }
 
     /**
-     *  在过滤器中打印一些网关转发的日志
+     * 在过滤器中打印一些网关转发的日志
+     * <p>
+     * printLog方法的主要逻辑是：通过ServerWebExchange对象的getAttribute方法获取各种信息，
+     * 比如请求URI信息，路由信息等。可用的key值可以查看ServerWebExchangeUtils类中的属性值：
      *
-     *  printLog方法的主要逻辑是：通过ServerWebExchange对象的getAttribute方法获取各种信息，
-     *  比如请求URI信息，路由信息等。可用的key值可以查看ServerWebExchangeUtils类中的属性值：
      * @param exchange
      */
     private void printLog(ServerWebExchange exchange) {

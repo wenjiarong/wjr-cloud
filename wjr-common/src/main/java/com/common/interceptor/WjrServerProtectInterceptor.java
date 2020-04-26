@@ -2,7 +2,8 @@ package com.common.interceptor;
 
 import com.alibaba.fastjson.JSONObject;
 import com.common.constant.WjrConstant;
-import com.common.response.WjrResponse;
+import com.common.response.R;
+import com.common.utils.WjrUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.MediaType;
 import org.springframework.util.Base64Utils;
@@ -29,10 +30,7 @@ public class WjrServerProtectInterceptor implements HandlerInterceptor {
         if (StringUtils.equals(gatewayToken, token)) {
             return true;
         } else {
-            WjrResponse wjrResponse = new WjrResponse();
-            response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
-            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            response.getWriter().write(JSONObject.toJSONString(wjrResponse.message("请通过网关获取资源")));
+            WjrUtil.makeResponse(response, MediaType.APPLICATION_JSON_UTF8_VALUE, HttpServletResponse.SC_FORBIDDEN, R.fail("请通过网关获取资源"));
             return false;
         }
     }

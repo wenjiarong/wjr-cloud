@@ -1,13 +1,16 @@
 package com.auth.filter;
 
 import com.auth.service.ValidateCodeService;
-import com.common.response.WjrResponse;
 import com.common.exception.ValidateCodeException;
+import com.common.response.IResultCode;
+import com.common.response.R;
+import com.common.response.ResultCode;
 import com.common.utils.WjrUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
@@ -24,7 +27,7 @@ import java.util.Base64;
 
 /**
  * 定义一个过滤器，用于拦截请求并校验验证码的正确性
- *
+ * <p>
  * ValidateCodeFilter继承Spring Boot提供的OncePerRequestFilter，
  * 该过滤器实现了javax.servlet.filter接口，顾名思义，它可以确保我们的逻辑只被执行一次：
  */
@@ -65,9 +68,8 @@ public class ValidateCodeFilter extends OncePerRequestFilter {
                 validateCode(httpServletRequest);
                 filterChain.doFilter(httpServletRequest, httpServletResponse);
             } catch (ValidateCodeException e) {
-                WjrResponse wjrResponse = new WjrResponse();
                 WjrUtil.makeResponse(httpServletResponse, MediaType.APPLICATION_JSON_UTF8_VALUE,
-                        HttpServletResponse.SC_INTERNAL_SERVER_ERROR, wjrResponse.message(e.getMessage()));
+                        HttpServletResponse.SC_INTERNAL_SERVER_ERROR, R.fail(ResultCode.INTERNAL_SERVER_ERROR.getCode(), e.getMessage()));
                 log.error(e.getMessage(), e);
             }
         } else {

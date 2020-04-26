@@ -2,8 +2,8 @@ package com.system.controller;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.common.query.QueryRequest;
-import com.common.response.WjrResponse;
 import com.common.exception.WjrException;
+import com.common.response.R;
 import com.common.utils.WjrUtil;
 import com.system.entity.SystemUser;
 import com.system.service.IUserService;
@@ -28,9 +28,9 @@ public class UserController {
 
     @GetMapping
     @PreAuthorize("hasAnyAuthority('user:view')")
-    public WjrResponse userList(QueryRequest queryRequest, SystemUser user) {
+    public R<Map<String, Object>> userList(QueryRequest queryRequest, SystemUser user) {
         Map<String, Object> dataTable = WjrUtil.getDataTable(userService.findUserDetail(user, queryRequest));
-        return new WjrResponse().data(dataTable);
+        return R.data(dataTable);
     }
 
     @PostMapping

@@ -1,6 +1,6 @@
 package com.system.controller;
 
-import com.common.response.WjrResponse;
+import com.common.response.R;
 import com.system.entity.Menu;
 import com.system.entity.router.VueRouter;
 import com.system.service.IMenuService;
@@ -25,7 +25,7 @@ public class MenuController {
     private IMenuService menuService;
 
     @GetMapping("/{username}")
-    public WjrResponse getUserRouters(@NotBlank(message = "{required}") @PathVariable String username) {
+    public R<Map<String, Object>> getUserRouters(@NotBlank(message = "{required}") @PathVariable String username) {
         Map<String, Object> result = new HashMap<>();
         // 构建用户路由对象
         List<VueRouter<Menu>> userRouters = this.menuService.getUserRouters(username);
@@ -34,7 +34,7 @@ public class MenuController {
         // 组装数据
         result.put("routes", userRouters);
         result.put("permissions", userPermissions);
-        return new WjrResponse().data(result);
+        return R.data(result);
     }
 
 }
