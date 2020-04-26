@@ -11,8 +11,13 @@ canal:
 mapper:
   mappers: com.canal.mapper.Mapper
 
-mybatis:
+mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
+  configuration:
+    cache-enabled: true
+    jdbc-type-for-null: null
+  global-config:
+    banner: false
 
 spring:
   datasource:
