@@ -87,10 +87,10 @@ public class WjrGatewayRequestFilter implements GlobalFilter {
         return null;
     }
 
-    private Mono<Void> makeResponse(ServerHttpResponse response, WjrResponse febsResponse) {
+    private Mono<Void> makeResponse(ServerHttpResponse response, WjrResponse wjrResponse) {
         response.setStatusCode(HttpStatus.FORBIDDEN);
         response.getHeaders().add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_UTF8_VALUE);
-        DataBuffer dataBuffer = response.bufferFactory().wrap(JSONObject.toJSONString(febsResponse).getBytes());
+        DataBuffer dataBuffer = response.bufferFactory().wrap(JSONObject.toJSONString(wjrResponse).getBytes());
         return response.writeWith(Mono.just(dataBuffer));
     }
 
