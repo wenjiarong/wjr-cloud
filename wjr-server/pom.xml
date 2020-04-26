@@ -14,6 +14,7 @@
     <modules>
         <module>wjr-server-system</module>
         <module>wjr-server-test</module>
+        <module>wjr-server-canal</module>
     </modules>
 
     <dependencies>

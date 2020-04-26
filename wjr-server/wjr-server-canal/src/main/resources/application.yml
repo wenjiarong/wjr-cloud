@@ -1,0 +1,39 @@
+canal:
+  client:
+    instances:
+      example:
+        acquireInterval: 1000
+        batchSize: 1000
+        clusterEnabled: false
+        host: 47.112.179.5
+        port: 11111
+        retryCount: 20
+mapper:
+  mappers: com.canal.mapper.Mapper
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+spring:
+  datasource:
+    dynamic:
+      #要开启p6spy功能,p6spy用于在控制台中打印MyBatis执行的SQL。
+      #p6spy适合在开发环境用于问题分析，其会带来一定的性能耗损，
+      #所以在生产环境这个配置最好改为false，将其关闭
+      p6spy: true
+      hikari:
+        connection-timeout: 30000
+        max-lifetime: 1800000
+        max-pool-size: 15
+        min-idle: 5
+        connection-test-query: select 1
+        pool-name: wjrHikariCP
+      primary: base
+      datasource:
+        base:
+          username: wjr
+          password: Wjr@19691006
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://${mysql.url}:3306/wjr_cloud?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+  main:
+    allow-bean-definition-overriding: true
