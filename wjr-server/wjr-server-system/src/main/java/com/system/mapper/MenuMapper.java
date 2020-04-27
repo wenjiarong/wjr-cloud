@@ -1,13 +1,16 @@
 package com.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.system.cache.MybatisRedisCache;
 import com.system.entity.Menu;
+import org.apache.ibatis.annotations.CacheNamespace;
 
 import java.util.List;
 
 /**
  *  实现根据用户获取菜单信息，并将菜单转换为包含上下级结构的路由信息的功能
  */
+@CacheNamespace(implementation = MybatisRedisCache.class, eviction = MybatisRedisCache.class)
 public interface MenuMapper extends BaseMapper<Menu> {
 
     /**
