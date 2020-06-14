@@ -14,7 +14,6 @@ mapper:
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   configuration:
-    cache-enabled: true
     jdbc-type-for-null: null
   global-config:
     banner: false
