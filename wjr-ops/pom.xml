@@ -12,8 +12,7 @@
     <artifactId>wjr-ops</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>wjr-flow-design</module>
-        <module>wjr-flow</module>
+        <module>wjr-flowable</module>
     </modules>
 
 

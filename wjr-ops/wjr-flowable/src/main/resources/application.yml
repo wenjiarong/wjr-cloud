@@ -1,0 +1,36 @@
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    jdbc-type-for-null: null
+  global-config:
+    banner: false
+
+# flowable 配置
+flowable:
+  # 关闭异步，不关闭历史数据的插入就是异步的，会在同一个事物里面，无法回滚
+  # 开发可开启会提高些效率，上线需要关闭
+  async-executor-activate: false
+
+spring:
+  datasource:
+    dynamic:
+      #要开启p6spy功能,p6spy用于在控制台中打印MyBatis执行的SQL。
+      #p6spy适合在开发环境用于问题分析，其会带来一定的性能耗损，
+      #所以在生产环境这个配置最好改为false，将其关闭
+      p6spy: true
+      hikari:
+        connection-timeout: 30000
+        max-lifetime: 1800000
+        max-pool-size: 15
+        min-idle: 5
+        connection-test-query: select 1
+        pool-name: wjrHikariCP
+      primary: base
+      datasource:
+        base:
+          username: root
+          password: root
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://${mysql.url}:13306/wjr_flowable?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+  main:
+    allow-bean-definition-overriding: true
