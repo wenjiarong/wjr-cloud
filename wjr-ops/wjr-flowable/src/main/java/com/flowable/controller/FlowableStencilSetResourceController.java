@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package design.config;
+package com.flowable.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,9 +24,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/app")
-public class FlowableStencilSetResource {
+public class FlowableStencilSetResourceController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(FlowableStencilSetResource.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(FlowableStencilSetResourceController.class);
 
     @Autowired
     protected ObjectMapper objectMapper;

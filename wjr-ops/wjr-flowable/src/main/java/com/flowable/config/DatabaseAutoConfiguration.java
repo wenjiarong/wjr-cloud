@@ -1,4 +1,4 @@
-package design.config;
+package com.flowable.config;
 
 import liquibase.Liquibase;
 import liquibase.database.Database;

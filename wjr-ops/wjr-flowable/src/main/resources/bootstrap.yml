@@ -1,6 +1,6 @@
 spring:
   application:
-    name: wjr-flow-design
+    name: wjr-flowable
   cloud:
     nacos:
       discovery:
@@ -10,8 +10,8 @@ spring:
         # 指定配置分组名称
         group: DEFAULT_GROUP
         # 指定在nacos配置中心对应微服务配置的前缀
-        prefix: wjr-flow-design
+        prefix: wjr-flowable
         # 指定微服务配置文件的类型
         file-extension: yaml
 server:
-  port: 9933
+  port: 8087

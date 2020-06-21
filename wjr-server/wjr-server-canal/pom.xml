@@ -12,6 +12,11 @@
     <artifactId>wjr-server-canal</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.wjr</groupId>
+            <artifactId>wjr-common</artifactId>
+            <version>1.0.0.RELEASE</version>
+        </dependency>
         <!--引入starter-canal-->
         <dependency>
             <artifactId>wjr-canal</artifactId>

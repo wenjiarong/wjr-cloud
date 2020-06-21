@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package security;
+package org.flowable.ui.common.security;
 
 import org.flowable.idm.api.User;
 import org.flowable.ui.common.model.RemoteUser;

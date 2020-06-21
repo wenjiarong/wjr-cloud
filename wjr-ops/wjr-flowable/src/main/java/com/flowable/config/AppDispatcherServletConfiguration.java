@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package design.config;
+package com.flowable.config;
 
 import org.flowable.ui.modeler.rest.app.EditorGroupsResource;
 import org.flowable.ui.modeler.rest.app.EditorUsersResource;

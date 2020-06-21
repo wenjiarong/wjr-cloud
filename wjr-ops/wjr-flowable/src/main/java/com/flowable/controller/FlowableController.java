@@ -1,4 +1,4 @@
-package design.controller;
+package com.flowable.controller;
 
 import org.flowable.ui.common.model.UserRepresentation;
 import org.flowable.ui.common.security.DefaultPrivileges;

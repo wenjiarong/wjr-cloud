@@ -1,4 +1,4 @@
-package design.config;
+package com.flowable.config;
 
 import lombok.Data;
 import org.flowable.engine.ProcessEngine;

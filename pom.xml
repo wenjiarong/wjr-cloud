@@ -28,7 +28,7 @@
     <properties>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <spring-cloud-alibaba.version>0.9.0.RELEASE</spring-cloud-alibaba.version>
-        <flowable.version>6.4.1</flowable.version>
+        <flowable.version>6.5.0</flowable.version>
     </properties>
 
     <dependencyManagement>
