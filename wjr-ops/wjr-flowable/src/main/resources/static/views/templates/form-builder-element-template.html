@@ -5,22 +5,22 @@
     <button class="btn btn-clean" ng-click="removeFormElement(formElement)"><i class="icon icon-remove"></i></button>
   </div>
 
-  <div ng-switch-when="text" class="form-group">
+  <div ng-switch-when="text" class="form-nodeGroup">
       <label class="control-label form-field-label">{{formElement.name}}</label><span class="marker" ng-if="formElement.required">*</span>
       <input type="text" class="form-control" style="cursor:default;background-color:#fff;" value="Text" disabled>
   </div>
-  
-    <div ng-switch-when="password" class="form-group">
+
+    <div ng-switch-when="password" class="form-nodeGroup">
       <label class="control-label form-field-label">{{formElement.name}}</label><span class="marker" ng-if="formElement.required">*</span>
       <input type="text" class="form-control" style="cursor:default;background-color:#fff;" value="Password" disabled>
   	</div>
 
-  <div ng-switch-when="multi-line-text" class="form-group">
+  <div ng-switch-when="multi-line-text" class="form-nodeGroup">
       <label class="control-label form-field-label">{{formElement.name}}</label><span class="marker" ng-if="formElement.required">*</span>
       <textarea rows="4" class="form-control" style="cursor:default;background-color:#fff;" value="Text" disabled></textarea>
   </div>
 
-  <div ng-switch-when="date" class="form-group">
+  <div ng-switch-when="date" class="form-nodeGroup">
       <label class="control-label form-field-label"><i class="glyphicon glyphicon-calendar"></i> {{formElement.name}} <span class="marker" ng-if="formElement.required">*</span></label>
       <input type="text" class="form-control" name="date" disabled>
   </div>
@@ -32,7 +32,7 @@
       </div>
   </div>
 
-  <div ng-switch-when="radio-buttons" class="form-group">
+  <div ng-switch-when="radio-buttons" class="form-nodeGroup">
       <label class="control-label form-field-label">{{formElement.name}} <span class="marker" ng-if="formElement.required">*</span></label>
       <div ng-show="formElement.options && formElement.options.length > 0" class="radio" ng-repeat="option in formElement.options">
           <label>
@@ -55,70 +55,70 @@
       <div class="clearfix"></div>
   </div>
 
-  <div ng-switch-when="integer" class="form-group">
+  <div ng-switch-when="integer" class="form-nodeGroup">
       <label class="control-label form-field-label">{{formElement.name}} <span class="marker" ng-if="formElement.required">*</span></label>
       <input type="number" class="form-control" style="cursor:default;background-color:#fff;" value="123" disabled>
   </div>
-  
-  <div ng-switch-when="decimal" class="form-group">
+
+  <div ng-switch-when="decimal" class="form-nodeGroup">
       <label class="control-label form-field-label">{{formElement.name}} <span class="marker" ng-if="formElement.required">*</span></label>
       <input type="number" class="form-control" style="cursor:default;background-color:#fff;" value="123.12" disabled>
   </div>
-  
-  <div ng-switch-when="dropdown" class="form-group">
+
+  <div ng-switch-when="dropdown" class="form-nodeGroup">
     <label class="control-label form-field-label">{{formElement.name}} <span class="marker" ng-if="formElement.required">*</span></label>
     <select class="form-control" style="cursor:default;" disabled>
           <option>Select...</option>
     </select>
   </div>
 
-  <div ng-switch-when="people" class="form-group">
+  <div ng-switch-when="people" class="form-nodeGroup">
     <label class="control-label form-field-label">{{formElement.name}} <span class="marker" ng-if="formElement.required">*</span></label>
-    <div class="input-group">
-      <span class="input-group-addon"><i class="icon icon-user-add"></i></span>
+    <div class="input-nodeGroup">
+      <span class="input-nodeGroup-addon"><i class="icon icon-user-add"></i></span>
       <input type="text" class="form-control" style="cursor:default;background-color:#fff;" placeholder="{{'FORM-BUILDER.LABEL.PERSON' | translate}}" value="{{formElement.placeholder}}" disabled>
     </div>
   </div>
 
-  <div ng-switch-when="functional-group" class="form-group">
+  <div ng-switch-when="functional-nodeGroup" class="form-nodeGroup">
     <label class="control-label form-field-label">{{formElement.name}} <span class="marker" ng-if="formElement.required">*</span></label>
-    <div class="input-group">
-      <span class="input-group-addon"></span>
+    <div class="input-nodeGroup">
+      <span class="input-nodeGroup-addon"></span>
       <input type="text" class="form-control" style="cursor:default;background-color:#fff;" placeholder="{{'FORM-BUILDER.LABEL.FUNCTIONAL-GROUP' | translate}}" value="{{formElement.placeholder}}" >
     </div>
   </div>
 
-  <div ng-switch-when="upload" class="form-group">
+  <div ng-switch-when="upload" class="form-nodeGroup">
     <label class="control-label form-field-label">{{formElement.name}} <span class="marker" ng-if="formElement.required">*</span></label>
-    <div class="input-group clearfix">
-      <span class="input-group-addon"><i class="icon icon-folder"></i></span>
+    <div class="input-nodeGroup clearfix">
+      <span class="input-nodeGroup-addon"><i class="icon icon-folder"></i></span>
       <input type="text" class="form-control" style="cursor:default;background-color:#fff;" value="Upload or import content..." disabled>
     </div>
   </div>
 
-  <div ng-switch-when="hyperlink" class="form-group">
+  <div ng-switch-when="hyperlink" class="form-nodeGroup">
     <label class="control-label form-field-label">{{formElement.name}}<span class="marker" ng-if="formElement.required">*</span></label>
     <div class="message" ng-show="formElement.params.hyperlinkUrl">{{formElement.params.hyperlinkUrl}}</div>
   </div>
-  
-  <div ng-switch-when="spacer" class="form-group">
+
+  <div ng-switch-when="spacer" class="form-nodeGroup">
 	<br />
   </div>
-  
-  <div ng-switch-when="horizontal-line" class="form-group">
+
+  <div ng-switch-when="horizontal-line" class="form-nodeGroup">
 	<hr>
   </div>
 
-  <div ng-switch-when="headline" class="form-group">
+  <div ng-switch-when="headline" class="form-nodeGroup">
 	<h4><strong>{{formElement.name}}</strong></h4>
   </div>
 
-  <div ng-switch-when="headline-with-line" class="form-group">
+  <div ng-switch-when="headline-with-line" class="form-nodeGroup">
 	<h4><strong>{{formElement.name}}</strong></h4>
 	<hr>
   </div>
 
-  <div ng-switch-when="expression" class="form-group">
+  <div ng-switch-when="expression" class="form-nodeGroup">
     <div class="message" ng-style="{'font-size': formElement.params.size + 'em'}">
       <div ng-show="formElement.expression && formElement.expression.length > 0">
         {{formElement.expression}}

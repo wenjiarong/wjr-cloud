@@ -1,7 +1,7 @@
 
 <div class="subheader" id="list-header">
 	<div class="fixed-container">
-	    <div class="btn-group pull-right">
+	    <div class="btn-nodeGroup pull-right">
 	        <button type="button" class="btn btn-default" ng-click="createApp()" translate>APPS-LIST.ACTION.CREATE</button>
 	        <button type="button" class="btn btn-default" ng-click="importAppDefinition()" translate>APPS-LIST.ACTION.IMPORT</button>
 	    </div>
@@ -10,8 +10,8 @@
 </div>
 <div class="container-fluid content" auto-height offset="40">
         <div class="col-xs-2 filter-wrapper">
-            <div class="input-group">
-                <span class="input-group-addon"> <i
+            <div class="input-nodeGroup">
+                <span class="input-nodeGroup-addon"> <i
                     class="glyphicon glyphicon-search"></i>
                 </span> <input type="text" ng-model="model.pendingFilterText" class="form-control" ng-change="filterDelayed()"
                     placeholder="{{'APPS-LIST.SEARCH-PLACEHOLDER' | translate}}">
@@ -22,10 +22,10 @@
                 </li>
             </ul>
         </div>
-        
+
         <div class="col-xs-10 item-wrapper" id="list-items">
             <div class="dropdown-subtle pull-right" ng-show="model.apps.size != 0">
-                <div class="btn-group btn-group-sm" activiti-fix-dropdown-bug>
+                <div class="btn-nodeGroup btn-nodeGroup-sm" activiti-fix-dropdown-bug>
                     <button type="button" class="btn btn-default dropdown-toggle"
                         data-toggle="dropdown">{{'FORMS-LIST.SORT.' + model.activeSort.labelKey | translate}} <i class="caret"></i></button>
                     <ul class="dropdown-menu pull-right">
@@ -69,7 +69,7 @@
                 <div class="app {{app.appDefinition.theme ? app.appDefinition.theme : 'theme-1'}}">
                     <div class="app-actions">
                         <span class="badge">v{{app.version}}</span>
-                        <div class="btn-group pull-right">
+                        <div class="btn-nodeGroup pull-right">
                             <button type="button" ng-click="showAppDetails(app); $event.stopPropagation();" class="btn btn-default" title="{{'APP.ACTION.DETAILS' | translate}}">
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
@@ -81,7 +81,7 @@
                     <a ng-click="showAppDetails(app)">
                         <div class="app-content">
                             <h3>{{app.name}}</h3>
-                
+
                             <p>{{app.description}}</p>
                         </div>
                         <div class="backdrop">
@@ -95,7 +95,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <div class="show-more" ng-if="model.apps.data.length < model.apps.total">
                 <a>{{'APPS-LIST.ACTION.SHOW-MORE' | translate}}</a>
             </div>

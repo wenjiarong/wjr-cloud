@@ -12,12 +12,12 @@
                 </h2>
             </div>
             <div class="modal-body-with-overflow">
-                <div class="detail-group clearfix">
+                <div class="detail-nodeGroup clearfix">
                     <div class="col-xs-12">
                         <div class="alert alert-error" ng-show="!state.loadingCases && state.caseError" translate>PROPERTY.CASEREFERENCE.ERROR.FORM</div>
                     </div>
                 </div>
-                <div class="detail-group clearfix">
+                <div class="detail-nodeGroup clearfix">
                     <div class="col-xs-12 editor-item-picker">
                         <div ng-if="!state.loadingCases && !state.caseError" class="col-xs-4 editor-item-picker-component" ng-repeat="caseModel in caseModels" ng-class="{'selected' : caseModel.id == selectedCase.id}" ng-click="selectCase(caseModel, $event)">
                            <div class="controls">

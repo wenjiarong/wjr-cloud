@@ -1,6 +1,6 @@
 <div class="subheader editor-toolbar" id="editor-header">
     <div class="fixed-container">
-        <div class="btn-group">
+        <div class="btn-nodeGroup">
             <div class="btn-toolbar pull-left" ng-controller="FormToolbarController" ng-cloak>
                 <button id="{{item.id}}"
                         title="{{item.title | translate}}"
@@ -9,7 +9,7 @@
                         class="btn btn-inverse" ng-class="{'separator': item.type == 'separator'}"
                         ng-disabled="item.type == 'separator' || item.enabled == false"
                         ng-click="toolbarButtonClicked($index)">
-                        
+
                     <i ng-switch-when="button" ng-class="item.cssClass" class="toolbar-button" data-toggle="tooltip"
                        title="{{item.title | translate}}"></i>
 
@@ -17,7 +17,7 @@
                 </button>
             </div>
         </div>
-        <div class="btn-group pull-right" ng-show="!secondaryItems.length">
+        <div class="btn-nodeGroup pull-right" ng-show="!secondaryItems.length">
             <div class="btn-toolbar pull-right" ng-controller="FormToolbarController">
                 <button title="{{item.title | translate}}" ng-repeat="item in secondaryItems track by $index"
                         ng-switch on="item.type" class="btn btn-inverse"

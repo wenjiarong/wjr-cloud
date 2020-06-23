@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body" ng-if="!popup.foundUnresolvedModels">
             	<p>{{popup.popupType + '.POPUP.USE-AS-NEW-DESCRIPTION' | translate:popup.model}}</p>
-            	<div class="form-group">
+            	<div class="form-nodeGroup">
             	    <label for="newVersionComment">{{'PROCESS.VERSION-COMMENT' | translate}}</label>
             		<textarea ng-disabled="popup.loading" class="form-control" id="newVersionComment" rows="5" ng-model="popup.comment"></textarea>
             	</div>

@@ -11,18 +11,18 @@
 	                    <span>{{saveDialog.errorMessage}}</span>
 	                  </div>
 	                </div>
-                    <div class="form-group"  ng-class="{'has-error': decisionTableForm.name.$invalid}">
+                    <div class="form-nodeGroup"  ng-class="{'has-error': decisionTableForm.name.$invalid}">
                         <label for="decisiontableName">{{'DECISION-TABLE.NAME' | translate}}</label>
                         <input ng-disabled="model.loading" type="text" class="form-control" name="name" ng-required="true"
                                id="decisiontableName" ng-model="saveDialog.name" maxlength="400" auto-focus editor-input-check>
                     </div>
-                    <div class="form-group" ng-class="{'has-error': decisionTableForm.key.$invalid}">
+                    <div class="form-nodeGroup" ng-class="{'has-error': decisionTableForm.key.$invalid}">
                         <label for="decisiontableKey">{{'DECISION-TABLE.KEY' | translate}}</label>
                         <input ng-disabled="model.loading" type="text" class="form-control" name="key" maxlength="255" ng-required="true"
                                id="decisiontableKey" data-ng-trim="false" spaceless-value ng-model="saveDialog.key"
                                editor-input-check ng-pattern="keyFieldPattern" >
                     </div>
-                    <div class="form-group">
+                    <div class="form-nodeGroup">
                         <label for="decisiontableDescription">{{'DECISION-TABLE.DESCRIPTION' | translate}}</label>
                         <textarea ng-disabled="model.loading" class="form-control" id="decisiontableDescription" rows="5" ng-model="saveDialog.description"></textarea>
                     </div>
@@ -32,7 +32,7 @@
                             {{'MODEL.SAVE.NEWVERSION' | translate}}
                         </label>
                     </div>
-                    <div class="form-group" ng-if="saveDialog.newVersion">
+                    <div class="form-nodeGroup" ng-if="saveDialog.newVersion">
                         <label for="commentTextArea">{{'MODEL.SAVE.COMMENT' | translate}}</label>
                         <textarea id="commentTextArea" class="form-control" ng-model="saveDialog.comment" ng-disabled="status.loading"></textarea>
                     </div>

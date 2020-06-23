@@ -1,7 +1,7 @@
 
 <div class="subheader">
 	<div class="fixed-container">
-		<div class="btn-group pull-right">
+		<div class="btn-nodeGroup pull-right">
 			<button type="button" class="btn btn-default" ng-click="createCaseModel()" translate>CASE-LIST.ACTION.CREATE</button>
 			<button type="button" class="btn btn-default" ng-click="importCaseModel()" translate>CASE-LIST.ACTION.IMPORT</button>
 		</div>
@@ -10,8 +10,8 @@
 </div>
 <div class="container-fluid content" auto-height offset="40">
 		<div class="col-xs-2 filter-wrapper">
-			<div class="input-group">
-				<span class="input-group-addon"> <i
+			<div class="input-nodeGroup">
+				<span class="input-nodeGroup-addon"> <i
 					class="glyphicon glyphicon-search"></i>
 				</span> <input type="text" ng-model="model.pendingFilterText" class="form-control" ng-change="filterDelayed()"
 					placeholder="{{'CASE-LIST.SEARCH-PLACEHOLDER' | translate}}">
@@ -25,7 +25,7 @@
 
 		<div class="col-xs-10 item-wrapper" id="list-items">
 			<div class="dropdown-subtle pull-right">
-				<div class="btn-group btn-group-sm" activiti-fix-dropdown-bug>
+				<div class="btn-nodeGroup btn-nodeGroup-sm" activiti-fix-dropdown-bug>
 					<button type="button" class="btn btn-default dropdown-toggle"
 						data-toggle="dropdown">{{'CASE-LIST.SORT.' + model.activeSort.labelKey | translate}} <i class="caret"></i></button>
 					<ul class="dropdown-menu pull-right">
@@ -70,7 +70,7 @@
 				<div class="item-box" ng-style="{'background-image': 'url(\'' + getModelThumbnailUrl(caseModel.id, imageVersion) + '\')'}" ng-click="showCaseModelDetails(caseModel);">
 					<div class="actions">
 						<span class="badge">v{{caseModel.version}}</span>
-						<div class="btn-group pull-right">
+						<div class="btn-nodeGroup pull-right">
 							<button id="detailsButton" type="button" ng-click="showCaseModelDetails(caseModel); $event.stopPropagation();" class="btn btn-default" title="{{'CASE.ACTION.DETAILS' | translate}}">
 								<i class="glyphicon glyphicon-search"></i>
 							</button>

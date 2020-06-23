@@ -13,12 +13,12 @@
             </div>
             <div class="modal-header" ng-if="popup.state == 'newDecisionTable'"><h2>{{'DECISION-TABLE.POPUP.CREATE-TITLE' | translate}}</h2></div>
             <div class="modal-body-with-overflow" ng-if="popup.state == 'decisionTableReference'">
-                <div class="detail-group clearfix">
+                <div class="detail-nodeGroup clearfix">
                     <div class="col-xs-12">
                         <div class="alert alert-error" ng-show="!state.loadingDecisionTables && state.decisionTableError" translate>PROPERTY.DECISIONTABLEREFERENCE.ERROR.FORM</div>
                     </div>
                 </div>
-                <div class="detail-group clearfix">
+                <div class="detail-nodeGroup clearfix">
                     <div class="col-xs-12 editor-item-picker">
                         <div ng-if="!state.loadingDecisionTables && !state.decisionTableError" class="col-xs-4 editor-item-picker-component" ng-repeat="decisionTable in decisionTables" ng-class="{'selected' : decisionTable.decisionTableId == selectedDecisionTable.decisionTableId}" ng-click="selectDecisionTable(decisionTable, $event)">
                            <div class="controls">
@@ -44,17 +44,17 @@
                     <span>{{model.errorMessage}}</span>
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-nodeGroup">
                     <label for="newDecisionTableName">{{'DECISION-TABLE.NAME' | translate}}</label>
                     <input ng-disabled="model.loading" type="text" class="form-control"
                            id="newDecisionTableName" ng-model="model.decisionTable.name" custom-keys enter-pressed="ok()" auto-focus editor-input-check>
                 </div>
-                <div class="form-group">
+                <div class="form-nodeGroup">
                     <label for="newDecisionTableKey">{{'DECISION-TABLE.KEY' | translate}}</label>
                     <input ng-disabled="model.loading" type="text" class="form-control"
                            id="newDecisionTableKey" ng-model="model.decisionTable.key" editor-input-check>
                 </div>
-                <div class="form-group">
+                <div class="form-nodeGroup">
                     <label for="newDecisionTableDescription">{{'DECISION-TABLE.DESCRIPTION' | translate}}</label>
                     <textarea ng-disabled="model.loading" class="form-control" id="newDecisionTableDescription" rows="5" ng-model="model.decisionTable.description"></textarea>
                 </div>

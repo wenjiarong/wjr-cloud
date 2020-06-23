@@ -8,7 +8,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <div class="clearfix form-group"
+                    <div class="clearfix form-nodeGroup"
                          ng-class="{'has-error': inputExpressionForm.expressionLabel.$invalid}">
                         <div class="col-xs-4">
                             <label>{{'DECISION-TABLE-EDITOR.POPUP.EXPRESSION-EDITOR.EXPRESSION-LABEL' |
@@ -23,7 +23,7 @@
 
                     <div>
                         <div>
-                            <div class="clearfix form-group"
+                            <div class="clearfix form-nodeGroup"
                                  ng-class="{'has-error': inputExpressionForm.variableId.$invalid}">
                                 <div class="col-xs-4">
                                     <label>{{'DECISION-TABLE-EDITOR.POPUP.EXPRESSION-EDITOR.EXPRESSION-VARIABLE-NAME' |
@@ -39,7 +39,7 @@
                         </div>
                     </div>
 
-                    <div class="clearfix form-group"
+                    <div class="clearfix form-nodeGroup"
                          ng-class="{'has-error': inputExpressionForm.variableType.$invalid}">
                         <div class="col-xs-4">
                             <label>{{'DECISION-TABLE-EDITOR.POPUP.EXPRESSION-EDITOR.EXPRESSION-VARIABLE-TYPE' |
@@ -53,7 +53,7 @@
                     </div>
 
                     <div ng-if="popup.selectedExpressionVariableType != 'collection'">
-                        <div class="clearfix form-group">
+                        <div class="clearfix form-nodeGroup">
                             <div class="col-xs-4">
                                 <label>{{'DECISION-TABLE-EDITOR.POPUP.EXPRESSION-EDITOR.ALLOWED-VALUES' |
                                     translate}}</label>

@@ -7,17 +7,17 @@
 			    <h2>
 			        {{'PROPERTY.PROCESSREFERENCE.TITLE' | translate}}
 			        <span ng-show="selectedProcess != null"> - {{selectedProcess.name}}</span>
-			        <span ng-show="selectedProcess == null"> - {{'PROPERTY.PROCESSREFERENCE.EMPTY' | translate}}</span> 
-			    
+			        <span ng-show="selectedProcess == null"> - {{'PROPERTY.PROCESSREFERENCE.EMPTY' | translate}}</span>
+
 			    </h2>
 			</div>
 			<div class="modal-body-with-overflow">
-			    <div class="detail-group clearfix">
+			    <div class="detail-nodeGroup clearfix">
                     <div class="col-xs-12">
 			            <div class="alert alert-error" ng-show="(!state.loadingFolders && !state.loadingProcesses) && state.processError" translate>PROPERTY.PROCESSREFERENCE.ERROR.PROCESS</div>
 			        </div>
 			    </div>
-			    <div class="detail-group clearfix">
+			    <div class="detail-nodeGroup clearfix">
                     <div class="col-xs-12 editor-item-picker">
 			            <div ng-if="!state.loadingProcesses && !state.processError" class="col-xs-4 editor-item-picker-component" ng-repeat="processModel in processModels" ng-class="{'selected' : processModel.id == selectedProcess.id}" ng-click="selectProcess(processModel, $event)">
 			               <div class="controls">

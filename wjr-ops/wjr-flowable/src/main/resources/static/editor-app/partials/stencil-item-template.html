@@ -1,19 +1,19 @@
-<span ng-click="group.expanded = !group.expanded">
+<span ng-click="nodeGroup.expanded = !nodeGroup.expanded">
         <i class="glyphicon"
-           ng-class="{'glyphicon-chevron-right': !group.expanded, 'glyphicon-chevron-down': group.expanded}"></i>
-        {{group.name | translate}}
+           ng-class="{'glyphicon-chevron-right': !nodeGroup.expanded, 'glyphicon-chevron-down': nodeGroup.expanded}"></i>
+        {{nodeGroup.name | translate}}
     </span>
 
 <!-- Child groups -->
-<ul ng-repeat="group in group.groups"
-    class="stencil-group stencil-group-non-root"
-    ng-class="{collapsed: !group.expanded, 'first': $first}"
+<ul ng-repeat="nodeGroup in nodeGroup.groups"
+    class="stencil-nodeGroup stencil-nodeGroup-non-root"
+    ng-class="{collapsed: !nodeGroup.expanded, 'first': $first}"
     ng-include="'editor-app/partials/stencil-item-template.html?version=5'">
 </ul>
 
 <!-- Group items -->
 <ul>
-    <li ng-repeat="item in group.paletteItems" class="stencil-item"
+    <li ng-repeat="item in nodeGroup.paletteItems" class="stencil-item"
         id="{{item.id}}"
         title="{{item.description | translate}}"
         ng-model="draggedElement"

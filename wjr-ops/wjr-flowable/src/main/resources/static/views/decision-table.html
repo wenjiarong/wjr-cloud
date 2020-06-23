@@ -1,6 +1,6 @@
 <div class="subheader" ng-if="model.decisionTable">
     <div class="fixed-container">
-        <div class="btn-group pull-right" ng-if="!(currentKickstartModel)">
+        <div class="btn-nodeGroup pull-right" ng-if="!(currentKickstartModel)">
             <button type="button" class="btn btn-default" ng-click="openEditor()"
                     ng-if="model.decisionTable.latestVersion">
                 <i class="glyphicon glyphicon-edit icon-and-label"></i> {{'DECISION-TABLE.ACTION.OPEN-IN-EDITOR' |
@@ -12,14 +12,14 @@
             </button>
         </div>
 
-        <div class="btn-group pull-right" ng-if="!(currentKickstartModel)">
+        <div class="btn-nodeGroup pull-right" ng-if="!(currentKickstartModel)">
             <a href="{{model.decisionTableDownloadUrl}}" class="btn btn-default"
                title="{{'DECISION-TABLE.ACTION.EXPORT' | translate}}">
                 <i class="glyphicon glyphicon-save"></i>
             </a>
         </div>
 
-        <div class="btn-group pull-right" ng-if="!(currentKickstartModel)">
+        <div class="btn-nodeGroup pull-right" ng-if="!(currentKickstartModel)">
             <button type="button" class="btn btn-default" ng-click="editDecisionTable()"
                     ng-disabled="!model.decisionTable.latestVersion"
                     title="{{'DECISION-TABLE.ACTION.EDIT' | translate}}">
@@ -49,7 +49,7 @@
                                                                       translate-values="model.decisionTable"></span></span>
             </div>
             <div class="col-xs-8 details clearfix">
-                <div class="related btn-group">
+                <div class="related btn-nodeGroup">
                     <button id="toggle-history" ng-if="!(currentKickstartModel)" type="button" class="btn btn-subtle"
                             ng-click="toggleHistory($event)"
                             title="{{'DECISION-TABLE.ACTION.EDIT' | translate}}">

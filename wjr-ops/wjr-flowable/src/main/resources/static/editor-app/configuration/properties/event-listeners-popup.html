@@ -12,11 +12,11 @@
                 	<div class="col-xs-10">
             	        <div ng-if="translationsRetrieved" class="kis-listener-grid" ui-grid="gridOptions" ui-grid-selection></div>
             	        <div class="pull-right">
-            	            <div class="btn-group">
+            	            <div class="btn-nodeGroup">
             	                <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.MOVE.UP | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="moveListenerUp()"><i class="glyphicon glyphicon-arrow-up"></i></a>
             	                <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.MOVE.DOWN | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="moveListenerDown()"><i class="glyphicon glyphicon-arrow-down"></i></a>
             	            </div>
-            	            <div class="btn-group">
+            	            <div class="btn-nodeGroup">
             	                <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.ADD | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="addNewListener()"><i class="glyphicon glyphicon-plus"></i></a>
             	                <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.REMOVE | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="removeListener()"><i class="glyphicon glyphicon-minus"></i></a>
             	            </div>
@@ -26,7 +26,7 @@
 
             	<div class="row row-no-gutter">
                   <div ng-if="translationsRetrieved" ng-show="selectedListener" class="col-xs-6">
-                    <div class="form-group">
+                    <div class="form-nodeGroup">
             	        	<label>{{'PROPERTY.EVENTLISTENERS.EVENTS' | translate}}</label>
             	            <div ng-repeat="eventDefinition in selectedListener.events">
             	            	  <select id="eventField" class="form-control" ng-model="eventDefinition.event" ng-change="listenerDetailsChanged()"
@@ -89,26 +89,26 @@
                                    style="margin: 5px 0 5px 10px; font-size: 16px; cursor:pointer;"></i>
             	            </div>
 
-            	            <div class="form-group" ng-show="selectedListener.event" style="margin-top: 10px;">
+            	            <div class="form-nodeGroup" ng-show="selectedListener.event" style="margin-top: 10px;">
                                 <input type="checkbox" id="rethrowField" class="checkbox" ng-model="selectedListener.rethrowEvent" ng-change="listenerDetailsChanged()" style="display:inline-block;"/>
                                 <label for="classField" ng-click="selectedListener.rethrowEvent = !selectedListener.rethrowEvent" style="cursor:pointer;">{{'PROPERTY.EVENTLISTENERS.RETHROW' | translate}}</label>
                             </div>
             	       	  </div>
                      </div>
                      <div ng-show="selectedListener && selectedListener.events[0].event" class="col-xs-6">
-                     	<div class="form-group" ng-if="!selectedListener.rethrowEvent">
+                     	<div class="form-nodeGroup" ng-if="!selectedListener.rethrowEvent">
             		   		<label for="classField"> {{'PROPERTY.EVENTLISTENERS.CLASS' | translate}}</label>
             		   		<input type="text" id="classField" class="form-control" ng-model="selectedListener.className" ng-change="listenerDetailsChanged()" placeholder="{{'PROPERTY.EVENTLISTENERS.CLASS.PLACEHOLDER' | translate}}" />
             			</div>
-            			<div class="form-group" ng-if="!selectedListener.rethrowEvent">
+            			<div class="form-nodeGroup" ng-if="!selectedListener.rethrowEvent">
             		   		<label for="delegateExpressionField">{{'PROPERTY.EVENTLISTENERS.DELEGATEEXPRESSION' | translate}}</label>
             		   		<input type="text" id="delegateExpressionField" class="form-control" ng-model="selectedListener.delegateExpression" ng-change="listenerDetailsChanged()" placeholder="{{'PROPERTY.EVENTLISTENERS.DELEGATEEXPRESSION.PLACEHOLDER' | translate}}" />
             			</div>
-            			<div class="form-group" ng-if="!selectedListener.rethrowEvent">
+            			<div class="form-nodeGroup" ng-if="!selectedListener.rethrowEvent">
             		   		<label for="entityTypeField">{{'PROPERTY.EVENTLISTENERS.ENTITYTYPE' | translate}}</label>
             		   		<input type="text" id="entityTypeField" class="form-control" ng-model="selectedListener.entityType" ng-change="listenerDetailsChanged()" placeholder="{{'PROPERTY.EVENTLISTENERS.ENTITYTYPE.PLACEHOLDER' | translate}}" />
             			</div>
-            			<div class="form-group" ng-if="selectedListener.rethrowEvent">
+            			<div class="form-nodeGroup" ng-if="selectedListener.rethrowEvent">
             		   		<label for="delegateExpressionField">{{'PROPERTY.EVENTLISTENERS.RETHROWTYPE' | translate}}</label>
             		   		<select id="rethrowTypeField" class="form-control" ng-model="selectedListener.rethrowType" ng-change="rethrowTypeChanged()">
                                 <option>error</option>
@@ -117,15 +117,15 @@
                                 <option>globalSignal</option>
                             </select>
             			</div>
-            			<div class="form-group" ng-if="selectedListener.rethrowEvent && selectedListener.rethrowType === 'error'">
+            			<div class="form-nodeGroup" ng-if="selectedListener.rethrowEvent && selectedListener.rethrowType === 'error'">
             		   		<label for="errorCodeField">{{'PROPERTY.EVENTLISTENERS.ERRORCODE' | translate}}</label>
             		   		<input type="text" id="errorCodeField" class="form-control" ng-model="selectedListener.errorcode" ng-change="listenerDetailsChanged()" placeholder="{{'PROPERTY.EVENTLISTENERS.ERRORCODE.PLACEHOLDER' | translate}}" />
             			</div>
-            			<div class="form-group" ng-if="selectedListener.rethrowEvent && selectedListener.rethrowType === 'message'">
+            			<div class="form-nodeGroup" ng-if="selectedListener.rethrowEvent && selectedListener.rethrowType === 'message'">
             		   		<label for="messageNameField">{{'PROPERTY.EVENTLISTENERS.MESSAGENAME' | translate}}</label>
             		   		<input type="text" id="messageNameField" class="form-control" ng-model="selectedListener.messagename" ng-change="listenerDetailsChanged()" placeholder="{{'PROPERTY.EVENTLISTENERS.MESSAGENAME.PLACEHOLDER' | translate}}" />
             			</div>
-            			<div class="form-group" ng-if="selectedListener.rethrowEvent && (selectedListener.rethrowType === 'signal' || selectedListener.rethrowType === 'globalSignal')">
+            			<div class="form-nodeGroup" ng-if="selectedListener.rethrowEvent && (selectedListener.rethrowType === 'signal' || selectedListener.rethrowType === 'globalSignal')">
             		   		<label for="messageNameField">{{'PROPERTY.EVENTLISTENERS.SIGNALNAME' | translate}}</label>
             		   		<input type="text" id="signalNameField" class="form-control" ng-model="selectedListener.signalname" ng-change="listenerDetailsChanged()" placeholder="{{'PROPERTY.EVENTLISTENERS.SIGNALNAME.PLACEHOLDER' | translate}}" />
             			</div>

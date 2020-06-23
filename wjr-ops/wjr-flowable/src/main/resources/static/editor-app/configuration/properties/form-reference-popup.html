@@ -7,18 +7,18 @@
                 <h2>
                     {{'PROPERTY.FORMREFERENCE.TITLE' | translate}}
                     <span ng-show="selectedForm != null"> - {{selectedForm.name}}</span>
-                    <span ng-show="selectedForm == null"> - {{'PROPERTY.FORMREFERENCE.EMPTY' | translate}}</span> 
-                
+                    <span ng-show="selectedForm == null"> - {{'PROPERTY.FORMREFERENCE.EMPTY' | translate}}</span>
+
                 </h2>
             </div>
             <div class="modal-header" ng-if="popup.state == 'newForm'"><h2>{{'FORM.POPUP.CREATE-TITLE' | translate}}</h2></div>
             <div class="modal-body-with-overflow" ng-if="popup.state != 'newForm'">
-                <div class="detail-group clearfix">
+                <div class="detail-nodeGroup clearfix">
                     <div class="col-xs-12">
                         <div class="alert alert-error" ng-show="!state.loadingForms && state.formError" translate>PROPERTY.FORMREFERENCE.ERROR.FORM</div>
                     </div>
                 </div>
-                <div class="detail-group clearfix">
+                <div class="detail-nodeGroup clearfix">
                     <div class="col-xs-12 editor-item-picker">
                         <div ng-if="!state.loadingForms && !state.formError" class="col-xs-4 editor-item-picker-component" ng-repeat="form in forms" ng-class="{'selected' : form.formId == selectedForm.formId}" ng-click="selectForm(form, $event)">
                            <div class="controls">
@@ -44,17 +44,17 @@
                     <span>{{model.errorMessage}}</span>
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-nodeGroup">
                     <label for="newFormName">{{'FORM.NAME' | translate}}</label>
                     <input ng-disabled="model.loading" type="text" class="form-control"
                            id="newFormName" ng-model="model.form.name" custom-keys enter-pressed="ok()" auto-focus editor-input-check>
                 </div>
-                <div class="form-group">
+                <div class="form-nodeGroup">
                     <label for="newFormKey">{{'FORM.KEY' | translate}}</label>
                     <input ng-disabled="model.loading" type="text" class="form-control"
                            id="newFormKey" ng-model="model.form.key" editor-input-check>
                 </div>
-                <div class="form-group">
+                <div class="form-nodeGroup">
                     <label for="newFormDescription">{{'FORM.DESCRIPTION' | translate}}</label>
                     <textarea ng-disabled="model.loading" class="form-control" id="newFormDescription" rows="5" ng-model="model.form.description"></textarea>
                 </div>

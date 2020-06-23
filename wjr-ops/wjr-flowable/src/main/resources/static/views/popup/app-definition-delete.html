@@ -8,7 +8,7 @@
 			<div class="modal-body">
 				<p>{{'APP.POPUP.DELETE-DESCRIPTION-WITH-RUNTIME' | translate:model.app}}</p>
 
-				<div class="form-group" ng-if="model.app.version != 1 && model.app.createdBy == account.id">
+				<div class="form-nodeGroup" ng-if="model.app.version != 1 && model.app.createdBy == account.id">
 					<div class="radio" ng-click="popup.cascade = 'false'">
 				        <input ng-model="popup.cascade" value="false" type="radio" name="cascadeDelete">
 				        <strong style="cursor:pointer">{{'APP.POPUP.DELETE-CASCADE-FALSE' | translate:model.app}}</strong>
@@ -18,7 +18,7 @@
 				        <strong style="cursor:pointer">{{'APP.POPUP.DELETE-CASCADE-TRUE' | translate}}</strong>
 					</div>
 				</div>
-				
+
 			</div>
 			<div class="modal-footer">
 				<div class="pull-right">

@@ -8,13 +8,13 @@
             </div>
 
             <div class="modal-body">
-            
+
                 <div class="row row-no-gutter">
 
                 	<div class="col-xs-8">
                         <div ng-if="translationsRetrieved" class="kis-listener-grid" ui-grid="gridOptions" ui-grid-selection></div>
             	        <div class="pull-right">
-            	            <div class="btn-group">
+            	            <div class="btn-nodeGroup">
             	                <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.ADD | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="addNewMessageDefinition()"><i class="glyphicon glyphicon-plus"></i></a>
             	                <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.REMOVE | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="removeMessageDefinition()"><i class="glyphicon glyphicon-minus"></i></a>
             	            </div>
@@ -23,12 +23,12 @@
 
                     <div class="col-xs-4" ng-show="selectedMessageDefinition">
 
-                        <div class="form-group">
+                        <div class="form-nodeGroup">
                             <label>{{'PROPERTY.MESSAGEDEFINITIONS.ID' | translate}}</label>
                             <input type="text" class="form-control" ng-model="selectedMessageDefinition.id">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-nodeGroup">
                             <label>{{'PROPERTY.MESSAGEDEFINITIONS.NAME' | translate}}</label>
                             <input type="text" class="form-control" ng-model="selectedMessageDefinition.name">
                         </div>
@@ -36,7 +36,7 @@
                     </div>
 
             	</div>
-            	
+
             </div>
 
             <div class="modal-footer">

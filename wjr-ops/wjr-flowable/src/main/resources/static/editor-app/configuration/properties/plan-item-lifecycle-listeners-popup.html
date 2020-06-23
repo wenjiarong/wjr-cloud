@@ -12,11 +12,11 @@
 			        <div class="col-xs-6">
 			            <div ng-if="translationsRetrieved" class="kis-listener-grid" ui-grid="gridOptions" ui-grid-selection></div>
 			            <div class="pull-right">
-			                <div class="btn-group">
+			                <div class="btn-nodeGroup">
 			                    <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.MOVE.UP | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="moveListenerUp()"><i class="glyphicon glyphicon-arrow-up"></i></a>
 			                    <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.MOVE.DOWN | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="moveListenerDown()"><i class="glyphicon glyphicon-arrow-down"></i></a>
 			                </div>
-			                <div class="btn-group">
+			                <div class="btn-nodeGroup">
 			                    <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.ADD | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="addNewListener()"><i class="glyphicon glyphicon-plus"></i></a>
 			                    <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.REMOVE | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="removeListener()"><i class="glyphicon glyphicon-minus"></i></a>
 			                </div>
@@ -26,7 +26,7 @@
 			        <div class="col-xs-6">
 			            <div ng-show="selectedListener">
 
-			                <div class="form-group">
+			                <div class="form-nodeGroup">
 						   		<label for="sourceStateField">{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.SOURCE_STATE' | translate}}</label>
 						   		<select id="sourceStateField" class="form-control" ng-model="selectedListener.sourceState">
 			                        <option>active</option>
@@ -42,7 +42,7 @@
 									<option>async-active</option>
 								</select>
 							</div>
-							<div class="form-group">
+							<div class="form-nodeGroup">
 								<label for="targetStateField">{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.TARGET_STATE' | translate}}</label>
 								<select id="targetStateField" class="form-control" ng-model="selectedListener.targetState">
 									<option>active</option>
@@ -58,15 +58,15 @@
 									<option>async-active</option>
 								</select>
 							</div>
-							<div class="form-group">
+							<div class="form-nodeGroup">
 						   		<label for="classField">{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.CLASS' | translate}}</label>
 						   		<input type="text" id="classField" class="form-control" ng-model="selectedListener.className" ng-change="listenerDetailsChanged()" placeholder="{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.CLASS.PLACEHOLDER' | translate}}" />
 							</div>
-							<div class="form-group">
+							<div class="form-nodeGroup">
 						   		<label for="expressionField">{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.EXPRESSION' | translate}}</label>
 						   		<input type="text" id="expressionField" class="form-control" ng-model="selectedListener.expression" ng-change="listenerDetailsChanged()" placeholder="{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.EXPRESSION.PLACEHOLDER' | translate}}" />
 							</div>
-							<div class="form-group">
+							<div class="form-nodeGroup">
 						   		<label for="delegateExpressionField">{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.DELEGATEEXPRESSION' | translate}}</label>
 						   		<input type="text" id="delegateExpressionField" class="form-control" ng-model="selectedListener.delegateExpression" ng-change="listenerDetailsChanged()" placeholder="{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.DELEGATEEXPRESSION.PLACEHOLDER' | translate}}" />
 							</div>
@@ -79,11 +79,11 @@
 			        <div class="col-xs-6">
 			            <div ng-if="translationsRetrieved" class="kis-field-grid" ui-grid="gridFieldOptions" ui-grid-selection></div>
 			            <div class="pull-right">
-			                <div class="btn-group">
+			                <div class="btn-nodeGroup">
 			                    <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.MOVE.UP | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="moveFieldUp()"><i class="glyphicon glyphicon-arrow-up"></i></a>
 			                    <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.MOVE.DOWN | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="moveFieldDown()"><i class="glyphicon glyphicon-arrow-down"></i></a>
 			                </div>
-			                <div class="btn-group">
+			                <div class="btn-nodeGroup">
 			                    <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.ADD | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="addNewField()"><i class="glyphicon glyphicon-plus"></i></a>
 			                    <a class="btn btn-icon btn-lg" rel="tooltip" data-title="{{ACTION.REMOVE | translate}}" data-placement="bottom" data-original-title="" title="" ng-click="removeField()"><i class="glyphicon glyphicon-minus"></i></a>
 			                </div>
@@ -93,19 +93,19 @@
 			        <div class="col-xs-6">
 			            <div ng-show="selectedField">
 
-							<div class="form-group">
+							<div class="form-nodeGroup">
 						   		<label for="nameField">{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.FIELDS.NAME' | translate}}</label>
 						   		<input type="text" id="nameField" class="form-control" ng-model="selectedField.name" placeholder="{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.FIELDS.NAME.PLACEHOLDER' | translate}}" />
 							</div>
-			                <div class="form-group">
+			                <div class="form-nodeGroup">
 						   		<label for="stringValueField">{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.FIELDS.STRINGVALUE' | translate}}</label>
 						   		<input type="text" id="stringValueField" class="form-control" ng-model="selectedField.stringValue" ng-change="fieldDetailsChanged()" placeholder="{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.FIELDS.STRINGVALUE.PLACEHOLDER' | translate}}" />
 							</div>
-							<div class="form-group">
+							<div class="form-nodeGroup">
 						   		<label for="expressionField">{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.FIELDS.EXPRESSION' | translate}}</label>
 						   		<input type="text" id="expressionField" class="form-control" ng-model="selectedField.expression" ng-change="fieldDetailsChanged()" placeholder="{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.FIELDS.EXPRESSION.PLACEHOLDER' | translate}}" />
 							</div>
-							<div class="form-group">
+							<div class="form-nodeGroup">
 						   		<label for="stringField">{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.FIELDS.STRING' | translate}}</label>
 						   		<textarea id="stringField" class="form-control" ng-model="selectedField.string" ng-change="fieldDetailsChanged()" placeholder="{{'PROPERTY.PLANITEMLIFECYCLELISTENERS.FIELDS.STRING.PLACEHOLDER' | translate}}"></textarea>
 							</div>

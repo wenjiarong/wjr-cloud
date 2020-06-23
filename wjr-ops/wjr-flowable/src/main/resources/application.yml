@@ -1,22 +1,21 @@
 mybatis-plus:
-  mapper-locations: classpath:/META-INF/modeler-mybatis-mappings/*.xml
+  mapper-locations: classpath:mapper/*.xml
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     jdbc-type-for-null: null
   global-config:
     banner: false
-  configuration-properties:
-    # 配置流程引擎参数，详情可见 DatabaseConfiguration
-    blobType: BLOB
-    boolValue: TRUE
-    # 不要设置库名，否则会出现双库名 bug
-    prefix: ''
 
-# flowable 配置
 flowable:
-  # 关闭异步，不关闭历史数据的插入就是异步的，会在同一个事物里面，无法回滚
-  # 开发可开启会提高些效率，上线需要关闭
-  async-executor-activate: false
+  activity-font-name: \u5B8B\u4F53
+  label-font-name: \u5B8B\u4F53
+  annotation-font-name: \u5B8B\u4F53
+  check-process-definitions: false
+  common:
+    app:
+      idm-url: http://localhost:8087
+      idm-admin:
+        user: admin
+        password: test
 
 spring:
   datasource:
@@ -41,14 +40,3 @@ spring:
           url: jdbc:mysql://${mysql.url}:13306/wjr_flowable?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
   main:
     allow-bean-definition-overriding: true
-
-
-#Actuator配置开放所有端点
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always

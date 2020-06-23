@@ -1,7 +1,7 @@
 
 <div class="subheader" id="list-header">
 	<div class="fixed-container">
-	    <div class="btn-group pull-right">
+	    <div class="btn-nodeGroup pull-right">
 	        <button type="button" class="btn btn-default" ng-click="createForm()" translate>FORMS-LIST.ACTION.CREATE</button>
 	    </div>
 	    <h2>{{'FORMS-LIST.TITLE' | translate}}</h2>
@@ -9,8 +9,8 @@
 </div>
 <div class="container-fluid content" id="list-container" auto-height offset="40">
         <div class="col-xs-2 filter-wrapper">
-            <div class="input-group">
-                <span class="input-group-addon"> <i
+            <div class="input-nodeGroup">
+                <span class="input-nodeGroup-addon"> <i
                     class="glyphicon glyphicon-search"></i>
                 </span> <input type="text" ng-model="model.pendingFilterText" class="form-control" ng-change="filterDelayed()"
                     placeholder="{{'FORMS-LIST.SEARCH-PLACEHOLDER' | translate}}">
@@ -21,10 +21,10 @@
                 </li>
             </ul>
         </div>
-        
+
         <div class="col-xs-10 item-wrapper" id="list-items">
             <div class="dropdown-subtle pull-right">
-                <div class="btn-group btn-group-sm" activiti-fix-dropdown-bug>
+                <div class="btn-nodeGroup btn-nodeGroup-sm" activiti-fix-dropdown-bug>
                     <button type="button" class="btn btn-default dropdown-toggle"
                         data-toggle="dropdown">{{'FORMS-LIST.SORT.' + model.activeSort.labelKey | translate}} <i class="caret"></i></button>
                     <ul class="dropdown-menu pull-right">
@@ -46,19 +46,19 @@
                     <span ng-if="model.forms.size == 0 && model.filterText !='' && model.filterText !== undefined">{{'FORMS-LIST.FILTER.FILTER-TEXT-EMPTY' | translate:model}}</span>
                 </div>
             </div>
-            
+
             <div class="create-inline" ng-if="model.forms.size == 0 && (!model.filterText || model.filterText == '')">
                 <span>{{'FORMS-LIST.FILTER.' + model.activeFilter.labelKey + '-EMPTY' | translate}}</span>
                 <span><button type="button" class="btn btn-default" ng-click="createForm()">
                     <i class="glyphicon glyphicon-plus-sign"></i>{{'FORMS-LIST.ACTION.CREATE-INLINE' | translate}}
                 </button></span>
             </div>
-            
+
             <div class="item fadein" ng-repeat="form in model.forms.data track by $index">
                 <div class="item-box" ng-style="{'background-image': 'url(\'' + getModelThumbnailUrl(form.id, imageVersion) + '\')'}" ng-click="showFormDetails(form);">
                     <div class="actions">
                         <span class="badge">v{{form.version}}</span>
-                        <div class="btn-group pull-right">
+                        <div class="btn-nodeGroup pull-right">
                             <button type="button" ng-click="showFormDetails(form); $event.stopPropagation();" class="btn btn-default" title="{{'FORM.ACTION.DETAILS' | translate}}">
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="show-more" ng-if="model.forms.data.length < model.forms.total">
                 <a>{{'FORMS-LIST.ACTION.SHOW-MORE' | translate}}</a>
             </div>

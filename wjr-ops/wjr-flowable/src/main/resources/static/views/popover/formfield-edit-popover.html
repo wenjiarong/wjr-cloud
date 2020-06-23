@@ -19,14 +19,14 @@
                     </div>
                 </div>
 
-                <div class="form-group" ng-if="activeTab.id == 'general' && formElement.type != 'expression'">
+                <div class="form-nodeGroup" ng-if="activeTab.id == 'general' && formElement.type != 'expression'">
                     <label translate="FORM-BUILDER.COMPONENT.LABEL"></label>
                     <input type="text" class="form-control" ng-model="formElement.name"
                            ng-change="formElementNameChanged(formElement)" auto-focus>
                 </div>
 
                 <div class="clearfix" ng-if="activeTab.id == 'general' && formElement.type != 'expression'">
-                    <div class="form-group">
+                    <div class="form-nodeGroup">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" ng-model="formElement.overrideId">
@@ -35,14 +35,14 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-nodeGroup">
                         <label translate="FORM-BUILDER.COMPONENT.ID"></label>
                         <input type="text" class="form-control" ng-model="formElement.id" ng-disabled="!formElement.overrideId" editor-input-check>
                     </div>
 
                     <div ng-show="formElement.type !== 'expression' && formElement.type !== 'hyperlink' && formElement.type !== 'spacer' && formElement.type !== 'horizontal-line' && formElement.type !== 'headline' && formElement.type !== 'headline-with-line'">
                         <div class="row">
-                           <div class="form-group col-md-2">
+                           <div class="form-nodeGroup col-md-2">
                                <div class="checkbox">
                                    <label>
                                        <input type="checkbox" ng-model="formElement.required">
@@ -50,18 +50,18 @@
                                    </label>
                                </div>
                             </div>
-                            <div class="form-group col-md-10">
+                            <div class="form-nodeGroup col-md-10">
                                <div class="checkbox">
                                    <label>
                                        <input type="checkbox" ng-model="formElement.readOnly">
                                        {{'FORM-BUILDER.COMPONENT.READONLY' | translate}}
                                    </label>
-                               </div>                               
+                               </div>
                            </div>
                         </div>
                     </div>
 
-                    <div ng-show="formElement.type === 'functional-group' || formElement.type === 'people' || formElement.type === 'dropdown' || formElement.type === 'date' || formElement.type === 'text' || formElement.type === 'password' || formElement.type === 'multi-line-text' || formElement.type === 'integer' || formElement.type === 'decimal'">
+                    <div ng-show="formElement.type === 'functional-nodeGroup' || formElement.type === 'people' || formElement.type === 'dropdown' || formElement.type === 'date' || formElement.type === 'text' || formElement.type === 'password' || formElement.type === 'multi-line-text' || formElement.type === 'integer' || formElement.type === 'decimal'">
                         <label translate="FORM-BUILDER.COMPONENT.PLACEHOLDER"></label>
                         <input type="text" class="form-control" ng-model="formElement.placeholder">
                     </div>
@@ -69,24 +69,24 @@
 
                 <div ng-if="(activeTab.id == 'options') && (formElement.type === 'radio-buttons' || formElement.type === 'dropdown')">
 
-                    <div class="form-group">
+                    <div class="form-nodeGroup">
                         <label translate="FORM-BUILDER.COMPONENT.OPTIONS"></label>
 
                         <div>
-                            <div ng-repeat="option in formElement.options" style="margin-bottom: 5px" class="input-group">
-                                <div class="input-group-addon">
+                            <div ng-repeat="option in formElement.options" style="margin-bottom: 5px" class="input-nodeGroup">
+                                <div class="input-nodeGroup-addon">
                                     <input type="radio" ng-disabled="optionsExpressionEnabled" ng-model="formElement.value" ng-value="option.name">
                                 </div>
 
                                 <input id="firstDropdownOption" type="text" class="form-control" ng-disabled="optionsExpressionEnabled" ng-if="$index == 0" ng-model="option.name" style="background-color: #E6E6E6;">
                                 <input type="text" class="form-control" ng-disabled="optionsExpressionEnabled" ng-if="$index > 0" ng-model="option.name">
 
-                                <a class="input-group-addon" ng-if="$index == 0"
+                                <a class="input-nodeGroup-addon" ng-if="$index == 0"
                                    data-placement="left" data-type="info" data-animation="am-fade-and-scale" bs-tooltip="'FORM-BUILDER.COMPONENT.DROPDOWN-EMPTY-VALUE-HELP'|translate">
                                     <i class="glyphicon glyphicon-question-sign"></i>
                                 </a>
 
-                                <a class="input-group-addon" ng-disabled="optionsExpressionEnabled" ng-click="removeOption($index)" ng-if="$index > 1"><i class="icon icon-remove"></i></a>
+                                <a class="input-nodeGroup-addon" ng-disabled="optionsExpressionEnabled" ng-click="removeOption($index)" ng-if="$index > 1"><i class="icon icon-remove"></i></a>
                             </div>
 
                             <div>
@@ -96,7 +96,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-nodeGroup">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" ng-init="optionsExpressionEnabled = formElement.optionsExpression != null && formElement.optionsExpression != ''" ng-model="optionsExpressionEnabled" ng-change="optionsExpressionChanged($event)">
@@ -104,17 +104,17 @@
                             </label>
                         </div>
                     </div>
-                    
-                    <div class="form-group">
+
+                    <div class="form-nodeGroup">
                         <label translate="FORM-BUILDER.COMPONENT.OPTIONS-EXPRESSION"></label>
                         <textarea rows="3" ng-disabled="!optionsExpressionEnabled" ng-model="formElement.optionsExpression" class="form-control" id="readonly-text-value"></textarea>
                         <div class="subtle" translate="FORM-BUILDER.MESSAGE.OPTIONS-EXPRESSION-HELP" style="padding: 5px 0 5px 1px;"></div>
                     </div>
-                    
+
                 </div>
 
                 <div ng-if="activeTab.id == 'upload' && formElement.type === 'upload'">
-                    <div class="form-group">
+                    <div class="form-nodeGroup">
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" ng-model="formElement.params.multiple">
@@ -124,18 +124,18 @@
                     </div>
                 </div>
                 <div ng-if="activeTab.id == 'advanced' && (formElement.type === 'password')">
-		     <div class="form-group">
+		     <div class="form-nodeGroup">
 			  <label translate="FORM-BUILDER.COMPONENT.MIN-LENGTH"></label> <input
 				 type="text" number-input-check maxlength="5" class="form-control"
 				 ng-model="formElement.params.minLength">
 		     </div>
-		     <div class="form-group">
+		     <div class="form-nodeGroup">
 			  <label translate="FORM-BUILDER.COMPONENT.MAX-LENGTH"></label> <input
 			         type="text" number-input-check maxlength="5" class="form-control"
 			         ng-model="formElement.params.maxLength">
               </div>
                         <div class="row">
-                           <div class="form-group col-md-12">
+                           <div class="form-nodeGroup col-md-12">
                                <div class="checkbox">
                                    <label>
                                        <input type="checkbox" ng-model="formElement.params.passwordunmask">
@@ -146,32 +146,32 @@
                         </div>
               </div>
                 <div ng-if="activeTab.id == 'advanced' && (formElement.type === 'text' || formElement.type === 'multi-line-text' || formElement.type === 'decimal' || formElement.type === 'integer')">
-		     <div class="form-group">
+		     <div class="form-nodeGroup">
 			  <label translate="FORM-BUILDER.COMPONENT.MIN-LENGTH"></label> <input
 				 type="text" number-input-check maxlength="5" class="form-control"
 				 ng-model="formElement.params.minLength">
 		     </div>
-		     <div class="form-group">
+		     <div class="form-nodeGroup">
 			  <label translate="FORM-BUILDER.COMPONENT.MAX-LENGTH"></label> <input
 			         type="text" number-input-check maxlength="5" class="form-control"
 			         ng-model="formElement.params.maxLength">
                      </div>
-		     <div class="form-group">
+		     <div class="form-nodeGroup">
 			  <label translate="FORM-BUILDER.COMPONENT.REGEX-PATTERN"></label>
-				<div class="input-group">
-			            <span class="input-group-addon">/^</span> <input type="text" class="form-control" ng-model="formElement.params.regexPattern">
-				    <span class="input-group-addon">$/</span>
+				<div class="input-nodeGroup">
+			            <span class="input-nodeGroup-addon">/^</span> <input type="text" class="form-control" ng-model="formElement.params.regexPattern">
+				    <span class="input-nodeGroup-addon">$/</span>
 				</div>
 		    </div>
                     <div class="row">
 			<div class="col-md-4">
-			    <div class="form-group">
+			    <div class="form-nodeGroup">
 			        <label translate="FORM-BUILDER.COMPONENT.MASK.TITLE"></label>
 			        <input type="text" class="form-control" ng-model="formElement.params.mask">
 			    </div>
 			</div>
 			<div class="col-md-4">
-			    <div class="form-group">
+			    <div class="form-nodeGroup">
 			        <label translate>FORM-BUILDER.COMPONENT.MASK.EXAMPLES.TITLE</label>
 				<ul>
 			   	    <li><span translate>FORM-BUILDER.COMPONENT.MASK.EXAMPLES.NUMBER</span>: <b>9</b></li>
@@ -184,21 +184,21 @@
 			</div>
 		    </div>
 		</div>
-                
+
 		<div ng-if="activeTab.id == 'advanced' && formElement.type === 'hyperlink'">
-		    <div class="form-group">
+		    <div class="form-nodeGroup">
 			<label translate="FORM-BUILDER.COMPONENT.HYPERLINK-URL"></label> <input
 			type="text" class="form-control" ng-model="formElement.params.hyperlinkUrl">
 		    </div>
-		</div>	    
-		    
+		</div>
+
                 <div ng-if="activeTab.id == 'general' && formElement.type === 'expression'">
-                    <div class="form-group">
+                    <div class="form-nodeGroup">
                         <label translate="FORM-BUILDER.COMPONENT.EXPRESSION"></label>
                         <textarea rows="3" ng-model="formElement.expression" class="form-control" id="readonly-text-value"></textarea>
                         <div class="subtle" translate="FORM-BUILDER.MESSAGE.EXPRESSION-HELP" style="padding: 5px 0 5px 1px;"></div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-nodeGroup">
                     	<label translate="FORM-BUILDER.COMPONENT.SIZE"></label>
                     	<select class="form-control" ng-model="formElement.params.size">
                         	<option>1</option>

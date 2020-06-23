@@ -27,7 +27,7 @@
                 <div ng-show="!popup.loadingRelations && (!popup.relations || popup.relations.length == 0)">
                     <p>{{popup.popupType + '.POPUP.DELETE-DESCRIPTION' | translate:popup.model}}</p>
 
-                    <div class="form-group" ng-if="popup.model.version != 1 && popup.model.createdBy == account.id">
+                    <div class="form-nodeGroup" ng-if="popup.model.version != 1 && popup.model.createdBy == account.id">
                         <div class="radio" ng-click="popup.cascade = 'false'">
                             <input ng-model="popup.cascade" value="false" type="radio" name="cascadeDelete">
                             <strong style="cursor:pointer">{{popup.popupType + '.POPUP.DELETE-CASCADE-FALSE' | translate:popup.model}}</strong>
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-				
+
 			</div>
 			<div class="modal-footer">
 				<div class="pull-right">

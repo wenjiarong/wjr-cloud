@@ -1,6 +1,6 @@
 <div class="subheader editor-toolbar" id="editor-header">
     <div class="fixed-container">
-        <div class="btn-group">
+        <div class="btn-nodeGroup">
             <div class="btn-toolbar pull-left" ng-controller="DecisionTableToolbarController" ng-cloak>
                 <button id="{{item.id}}"dec
                         title="{{item.title | translate}}"
@@ -15,7 +15,7 @@
                 </button>
             </div>
         </div>
-        <div class="btn-group pull-right" ng-show="!secondaryItems.length">
+        <div class="btn-nodeGroup pull-right" ng-show="!secondaryItems.length">
             <div class="btn-toolbar pull-right" ng-controller="DecisionTableToolbarController">
                 <button title="{{item.title | translate}}" ng-repeat="item in secondaryItems" ng-switch on="item.type"
                         class="btn btn-inverse" ng-class="{'separator': item.type == 'separator'}"

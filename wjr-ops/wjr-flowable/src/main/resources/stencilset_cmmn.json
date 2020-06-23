@@ -112,6 +112,16 @@
       "popular" : true
     } ]
   }, {
+    "name" : "tasklistenerspackage",
+    "properties" : [ {
+      "id" : "tasklisteners",
+      "type" : "multiplecomplex",
+      "title" : "Task listeners",
+      "value" : "",
+      "description" : "Listeners for a human task",
+      "popular" : true
+    } ]
+  }, {
     "name" : "formpropertiespackage",
     "properties" : [ {
       "id" : "formproperties",
@@ -239,6 +249,16 @@
       "popular" : true
     } ]
   }, {
+    "name" : "mailtaskheaderspackage",
+    "properties" : [ {
+      "id" : "mailtaskheaders",
+      "type" : "Text",
+      "title" : "Headers",
+      "value" : "",
+      "description" : "Line separated Mail headers (For example - X-Attribute: value).",
+      "popular" : true
+    } ]
+  }, {
     "name" : "mailtasktopackage",
     "properties" : [ {
       "id" : "mailtaskto",
@@ -319,136 +339,6 @@
       "popular" : true
     } ]
   }, {
-    "name" : "httptaskrequestmethodpackage",
-    "properties" : [ {
-      "id" : "httptaskrequestmethod",
-      "type" : "String",
-      "title" : "Request method",
-      "value" : "",
-      "description" : "Request method (For example - GET,POST,PUT etc).",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptaskrequesturlpackage",
-    "properties" : [ {
-      "id" : "httptaskrequesturl",
-      "type" : "Text",
-      "title" : "Request URL",
-      "value" : "",
-      "description" : "Request URL (For example - http://flowable.org).",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptaskrequestheaderspackage",
-    "properties" : [ {
-      "id" : "httptaskrequestheaders",
-      "type" : "Text",
-      "title" : "Request headers",
-      "value" : "",
-      "description" : "Line separated HTTP request headers (For example - Content-Type: application/json).",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptaskrequestbodypackage",
-    "properties" : [ {
-      "id" : "httptaskrequestbody",
-      "type" : "Text",
-      "title" : "Request body",
-      "value" : "",
-      "description" : "Request body (For example- ${sampleBody}).",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptaskrequesttimeoutpackage",
-    "properties" : [ {
-      "id" : "httptaskrequesttimeout",
-      "type" : "String",
-      "title" : "Request timeout",
-      "value" : "",
-      "description" : "Timeout in milliseconds for the request (For example - 5000).",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptaskdisallowredirectspackage",
-    "properties" : [ {
-      "id" : "httptaskdisallowredirects",
-      "type" : "String",
-      "title" : "Disallow redirects",
-      "value" : "",
-      "description" : "Flag to disallow HTTP redirects.",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptaskfailstatuscodespackage",
-    "properties" : [ {
-      "id" : "httptaskfailstatuscodes",
-      "type" : "String",
-      "title" : "Fail status codes",
-      "value" : "",
-      "description" : "Comma separated list of HTTP response status codes to retry, for example 400,5XX.",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptaskhandlestatuscodespackage",
-    "properties" : [ {
-      "id" : "httptaskhandlestatuscodes",
-      "type" : "String",
-      "title" : "Handle status codes",
-      "value" : "",
-      "description" : "Comma separated list of HTTP response status codes to ignore, for example 404,3XX.",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptaskignoreexceptionpackage",
-    "properties" : [ {
-      "id" : "httptaskignoreexception",
-      "type" : "String",
-      "title" : "Ignore exception",
-      "value" : "",
-      "description" : "Flag to ignore exceptions.",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptaskresponsevariablenamepackage",
-    "properties" : [ {
-      "id" : "httptaskresponsevariablename",
-      "type" : "String",
-      "title" : "Response variable name",
-      "value" : "",
-      "description" : "Define the variable name to store the http response.",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptasksaverequestvariablespackage",
-    "properties" : [ {
-      "id" : "httptasksaverequestvariables",
-      "type" : "String",
-      "title" : "Save request variables",
-      "value" : "",
-      "description" : "Flag to save request variables.",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptasksaveresponseparameterspackage",
-    "properties" : [ {
-      "id" : "httptasksaveresponseparameters",
-      "type" : "String",
-      "title" : "Save response status, headers",
-      "value" : "",
-      "description" : "Flag to save response status, headers etc.",
-      "popular" : true
-    } ]
-  }, {
-    "name" : "httptaskresultvariableprefixpackage",
-    "properties" : [ {
-      "id" : "httptaskresultvariableprefix",
-      "type" : "String",
-      "title" : "Result variable prefix",
-      "value" : "",
-      "description" : "Prefix for the execution variable names.",
-      "popular" : true
-    } ]
-  }, {
     "name" : "textpackage",
     "properties" : [ {
       "id" : "text",
@@ -487,6 +377,16 @@
       "title" : "Throw error if no rules were hit",
       "value" : "false",
       "description" : "Should an error be thrown if no rules of the decision table were hit and consequently no result was found.",
+      "popular" : true
+    } ]
+  }, {
+    "name" : "decisiontaskfallbacktodefaulttenantpackage",
+    "properties" : [ {
+      "id" : "decisiontaskfallbacktodefaulttenant",
+      "type" : "Boolean",
+      "title" : "Fallback to default tenant",
+      "value" : "false",
+      "description" : "Find decision definition without tenant when previous attemps to find it with tenant failed.",
       "popular" : true
     } ]
   }, {
@@ -538,6 +438,19 @@
           "value": "",
           "description": "Request body (For example- ${sampleBody}).",
           "popular": true
+        }
+      ]
+    },
+    {
+      "name" : "httptaskrequestbodyencodingpackage",
+      "properties" : [
+        {
+          "id" : "httptaskrequestbodyencoding",
+          "type" : "Text",
+          "title" : "Request body encoding",
+          "value" : "",
+          "description" : "Request body encoding (For example- UTF-8).",
+          "popular" : true
         }
       ]
     },
@@ -668,7 +581,7 @@
         "description" : "Flag indicating to store the response variable(s) transient",
         "popular" : true
       } ]
-    }, 
+    },
     {
       "name" : "httptasksaveresponseasjsonpackage",
       "properties" : [ {
@@ -701,6 +614,36 @@
       "popular" : true
     } ]
   }, {
+    "name" : "fallbacktodefaulttenantpackage",
+    "properties" : [ {
+      "id" : "fallbacktodefaulttenant",
+      "type" : "Boolean",
+      "title" : "Fallback to default tenant",
+      "value" : "false",
+      "description" : "Use default tenant as a fallback when definition is not found by key in the specified tenant",
+      "popular" : true
+    } ]
+  }, {
+      "name" : "processtaskinparameterspackage",
+      "properties" : [ {
+        "id" : "processtaskinparameters",
+        "type" : "Complex",
+        "title" : "In parameters",
+        "value" : "",
+        "description" : "Definition of the input parameters",
+        "popular" : true
+      } ]
+    }, {
+      "name" : "processtaskoutparameterspackage",
+      "properties" : [ {
+        "id" : "processtaskoutparameters",
+        "type" : "Complex",
+        "title" : "Out parameters",
+        "value" : "",
+        "description" : "Definition of the output parameters",
+        "popular" : true
+      } ]
+    }, {
     "name" : "timerexpressionpackage",
     "properties" : [ {
       "id" : "timerexpression",
@@ -747,10 +690,20 @@
       "type" : "String",
       "title" : "Condition",
       "value" : "",
-      "description" : "An expression that must be true to satisfy the sentry",
+      "description" : "",
       "popular" : true
     } ]
   }, {
+      "name" : "triggermodepackage",
+      "properties" : [ {
+        "id" : "triggermode",
+        "type" : "flowable-triggermode",
+        "title" : "Trigger mode",
+        "value" : "",
+        "description" : "Determines if the sentry conditions are evaluated with memory (default) of without (on-event). The default means that the parts (on- and ifparts) of a sentry being satisfied will be stored. Subsequent evaluations will use the stored parts when the sentry is re-evaluated. Using 'on-event', all parts are evaluated and if all are true the sentry is satisfied. If not, all results are discarded and not stored.",
+        "popular" : true
+      } ]
+    }, {
     "name" : "autocompletepackage",
     "properties" : [ {
       "id" : "autocompleteenabled",
@@ -848,6 +801,38 @@
       "popular" : true
     }]
   }, {
+      "name" : "planitemlifecyclelistenerspackage",
+      "properties" : [ {
+        "id" : "planitemlifecyclelisteners",
+        "type" : "multiplecomplex",
+        "title" : "Lifecycle listeners",
+        "value" : "",
+        "description" : "Listeners for lifecycle events of a plan item",
+        "popular" : true
+      } ]
+    }, {
+      "name" : "displayorderpackage",
+      "properties" : [ {
+        "id" : "displayorder",
+        "type" : "String",
+        "title" : "Display order",
+        "value" : "",
+        "description" : "A number value indicating the order compared to other stages when getting or showing a stage overview.",
+        "popular" : true
+      }]
+    },
+    {
+      "name" : "includeinstageoverviewpackage",
+      "properties" : [
+        {
+          "id": "includeinstageoverview",
+          "type": "Boolean",
+          "title": "Include in overview",
+          "value": "true",
+          "description": "Indicates if this stage should be considered for the stage overview",
+          "popular": true
+        }]
+    },{
     "name": "scriptformatpackage",
     "properties" : [ {
         "id": "scriptformat",
@@ -928,7 +913,10 @@
       "requiredrulepackage",
       "repetitionrulepackage",
       "manualactivationrulepackage",
-      "completionneutralrulepackage"
+      "completionneutralrulepackage",
+      "planitemlifecyclelistenerspackage",
+      "displayorderpackage",
+      "includeinstageoverviewpackage"
     ],
     "hiddenPropertyPackages" : [ ],
     "roles" : [ "StageActivity", "all", "association_start", "association_end" ]
@@ -949,7 +937,8 @@
       "requiredrulepackage",
       "repetitionrulepackage",
       "manualactivationrulepackage",
-      "completionneutralrulepackage"],
+      "completionneutralrulepackage",
+      "planitemlifecyclelistenerspackage"],
     "hiddenPropertyPackages" : [ ],
     "roles" : [ "Activity", "association_start", "association_end", "ActivitiesMorph", "all" ]
   }, {
@@ -970,11 +959,13 @@
       "formreferencepackage",
       "duedatedefinitionpackage",
       "prioritydefinitionpackage",
+      "tasklistenerspackage",
       "asyncpackage",
       "requiredrulepackage",
       "repetitionrulepackage",
       "manualactivationrulepackage",
-      "completionneutralrulepackage" ],
+      "completionneutralrulepackage",
+      "planitemlifecyclelistenerspackage" ],
     "hiddenPropertyPackages" : [ ],
     "roles" : [ "Activity", "association_start", "association_end", "ActivitiesMorph", "all" ]
   }, {
@@ -998,7 +989,8 @@
       "requiredrulepackage",
       "repetitionrulepackage",
       "manualactivationrulepackage",
-      "completionneutralrulepackage" ],
+      "completionneutralrulepackage",
+      "planitemlifecyclelistenerspackage" ],
     "hiddenPropertyPackages" : [ ],
     "roles" : [ "Activity", "association_start", "association_end", "ActivitiesMorph", "all" ]
   },
@@ -1018,11 +1010,13 @@
         "documentationpackage",
         "decisiontaskdecisiontablereferencepackage",
         "decisiontaskthrowerroronnohitspackage",
+        "decisiontaskfallbacktodefaulttenantpackage",
         "asyncpackage",
         "requiredrulepackage",
         "repetitionrulepackage",
         "manualactivationrulepackage",
-        "completionneutralrulepackage"
+        "completionneutralrulepackage",
+        "planitemlifecyclelistenerspackage"
       ],
       "hiddenPropertyPackages": [],
       "roles": [
@@ -1056,6 +1050,7 @@
         "httptaskrequesturlpackage",
         "httptaskrequestheaderspackage",
         "httptaskrequestbodypackage",
+        "httptaskrequestbodyencodingpackage",
         "httptaskrequesttimeoutpackage",
         "httptaskdisallowredirectspackage",
         "httptaskfailstatuscodespackage",
@@ -1066,7 +1061,8 @@
         "httptasksaveresponseparameterspackage",
         "httptaskresultvariableprefixpackage",
         "httptasksaveresponseparameterstransientpackage",
-        "httptasksaveresponseasjsonpackage"
+        "httptasksaveresponseasjsonpackage",
+        "planitemlifecyclelistenerspackage"
       ],
       "hiddenPropertyPackages": [],
       "roles": [
@@ -1084,7 +1080,7 @@
       "view" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<svg\n   xmlns=\"http://www.w3.org/2000/svg\"\n   xmlns:svg=\"http://www.w3.org/2000/svg\"\n   xmlns:oryx=\"http://www.b3mn.org/oryx\"\n   xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n\n   width=\"102\"\n   height=\"82\"\n   version=\"1.0\">\n  <defs></defs>\n  <oryx:magnets>\n  \t<oryx:magnet oryx:cx=\"1\" oryx:cy=\"20\" oryx:anchors=\"left\" />\n  \t<oryx:magnet oryx:cx=\"1\" oryx:cy=\"40\" oryx:anchors=\"left\" />\n  \t<oryx:magnet oryx:cx=\"1\" oryx:cy=\"60\" oryx:anchors=\"left\" />\n  \t\n  \t<oryx:magnet oryx:cx=\"25\" oryx:cy=\"79\" oryx:anchors=\"bottom\" />\n  \t<oryx:magnet oryx:cx=\"50\" oryx:cy=\"79\" oryx:anchors=\"bottom\" />\n  \t<oryx:magnet oryx:cx=\"75\" oryx:cy=\"79\" oryx:anchors=\"bottom\" />\n  \t\n  \t<oryx:magnet oryx:cx=\"99\" oryx:cy=\"20\" oryx:anchors=\"right\" />\n  \t<oryx:magnet oryx:cx=\"99\" oryx:cy=\"40\" oryx:anchors=\"right\" />\n  \t<oryx:magnet oryx:cx=\"99\" oryx:cy=\"60\" oryx:anchors=\"right\" />\n  \t\n  \t<oryx:magnet oryx:cx=\"25\" oryx:cy=\"1\" oryx:anchors=\"top\" />\n  \t<oryx:magnet oryx:cx=\"50\" oryx:cy=\"1\" oryx:anchors=\"top\" />\n  \t<oryx:magnet oryx:cx=\"75\" oryx:cy=\"1\" oryx:anchors=\"top\" />\n  \t\n  \t<oryx:magnet oryx:cx=\"50\" oryx:cy=\"40\" oryx:default=\"yes\" />\n  </oryx:magnets>\n  <g pointer-events=\"fill\" oryx:minimumSize=\"50 40\">\n\t<rect id=\"text_frame\" oryx:anchors=\"bottom top right left\" x=\"1\" y=\"1\" width=\"94\" height=\"79\" rx=\"10\" ry=\"10\" stroke=\"none\" stroke-width=\"0\" fill=\"none\" />\n\t<rect id=\"bg_frame\" oryx:resize=\"vertical horizontal\" x=\"0\" y=\"0\" width=\"100\" height=\"80\" rx=\"10\" ry=\"10\" stroke=\"#bbbbbb\" stroke-width=\"1\" fill=\"#f9f9f9\" />\n\t\t<text \n\t\t\tfont-size=\"12\" \n\t\t\tid=\"text_name\" \n\t\t\tx=\"50\" \n\t\t\ty=\"40\" \n\t\t\toryx:align=\"middle center\"\n\t\t\toryx:fittoelem=\"text_frame\"\n\t\t\tstroke=\"#373e48\">\n\t\t</text>\n\t\n\t<g id=\"scriptTask\" transform=\"translate(2,2)\">\n\t\t<path oryx:anchors=\"top left\"\n\t\t\td=\"m 5,2 0,0.094 c 0.23706,0.064 0.53189,0.1645 0.8125,0.375 0.5582,0.4186 1.05109,1.228 1.15625,2.5312 l 8.03125,0 1,0 1,0 c 0,-3 -2,-3 -2,-3 l -10,0 z M 4,3 4,13 2,13 c 0,3 2,3 2,3 l 9,0 c 0,0 2,0 2,-3 L 15,6 6,6 6,5.5 C 6,4.1111 5.5595,3.529 5.1875,3.25 4.8155,2.971 4.5,3 4.5,3 L 4,3 z\"\n     \t\tstyle=\"fill:#72a7d0;stroke:none\"\n\t\t/>\n\t</g><g id=\"required\" display=\"inherit\" stroke=\"#000000\"><g oryx:anchors=\"bottom\"><path fill=\"none\" oryx:anchors=\"bottom\" d=\"M49 67 L49 74 M49 76 L49 78\" transform=\"translate(-11,0)\"></path></g></g><g id=\"repetition\" oryx:anchors=\"bottom\"><path oryx:anchors=\"bottom\" fill=\"none\" stroke=\"#bbbbbb\" stroke-width=\"2\" d=\"M47 68 v10 M50 68 v10 M53 68 v10\" transform=\"translate(10,0)\"/></g><g id=\"manualActivation\" display=\"inherit\" stroke=\"#000000\" oryx:anchors=\"bottom\"><path oryx:anchors=\"bottom\" fill=\"none\" d=\"M45.5 68 L54 73 L45.5 77 L45.5 69z\" transform=\"translate(-2,0)\"></path></g></g></svg>",
       "icon" : "activity/scripttask.png",
       "groups" : [ "Activities" ],
-      "propertyPackages" : [  
+      "propertyPackages" : [
         "overrideidpackage",
         "namepackage",
         "documentationpackage",
@@ -1094,9 +1090,10 @@
         "repetitionrulepackage",
         "manualactivationrulepackage",
         "completionneutralrulepackage",
-        "scriptformatpackage", 
+        "scriptformatpackage",
         "scripttextpackage",
-        "servicetaskresultvariablepackage"
+        "servicetaskresultvariablepackage",
+        "planitemlifecyclelistenerspackage"
       ],
       "hiddenPropertyPackages" : [ ],
       "roles" : [ "Activity", "association_start", "association_end", "ActivitiesMorph", "all" ]
@@ -1114,7 +1111,8 @@
       "documentationpackage",
       "requiredrulepackage",
       "repetitionrulepackage",
-      "completionneutralrulepackage" ],
+      "completionneutralrulepackage",
+      "planitemlifecyclelistenerspackage" ],
     "hiddenPropertyPackages" : [ ],
     "roles" : [ "Activity", "association_start", "association_end", "ActivitiesMorph", "all" ]
   }, {
@@ -1131,11 +1129,13 @@
       "documentationpackage",
       "blockingpackage",
       "casetaskcasereferencepackage",
+      "fallbacktodefaulttenantpackage",
       "asyncpackage",
       "requiredrulepackage",
       "repetitionrulepackage",
       "manualactivationrulepackage",
-      "completionneutralrulepackage"],
+      "completionneutralrulepackage",
+      "planitemlifecyclelistenerspackage"],
     "hiddenPropertyPackages" : [ ],
     "roles" : [ "Activity", "association_start", "association_end", "ActivitiesMorph", "all" ]
   }, {
@@ -1152,31 +1152,55 @@
       "documentationpackage",
       "blockingpackage",
       "processtaskprocessreferencepackage",
+      "fallbacktodefaulttenantpackage",
+      "processtaskinparameterspackage",
+      "processtaskoutparameterspackage",
       "asyncpackage",
       "requiredrulepackage",
       "repetitionrulepackage",
       "manualactivationrulepackage",
-      "completionneutralrulepackage"],
+      "completionneutralrulepackage",
+      "planitemlifecyclelistenerspackage"],
     "hiddenPropertyPackages" : [ ],
     "roles" : [ "Activity", "association_start", "association_end", "ActivitiesMorph", "all" ]
-  }, {
-    "type" : "node",
-    "id" : "TimerEventListener",
-    "title" : "Timer event listener",
-    "description" : "An eventlistener with a timer trigger",
-    "view" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<svg\n   xmlns=\"http://www.w3.org/2000/svg\"\n   xmlns:oryx=\"http://www.b3mn.org/oryx\"\n   width=\"40\"\n   height=\"40\"\n   version=\"1.0\">\n  <defs></defs>\n  <oryx:magnets>\n  \t<oryx:magnet oryx:cx=\"16\" oryx:cy=\"16\" oryx:default=\"yes\" />\n  </oryx:magnets>\n  <g pointer-events=\"fill\">\n    <circle \n    \tid=\"bg_frame\" \n    \tcx=\"16\" \n    \tcy=\"16\" \n    \tr=\"15\" \n    \tstroke=\"#585858\" \n    \tfill=\"#ffffff\" \n    \tstroke-width=\"1\"\n    \tstyle=\"stroke-dasharray: 5.5, 3\" />\n    <circle id=\"frame\" cx=\"16\" cy=\"16\" r=\"15\" stroke=\"#585858\" fill=\"none\" stroke-width=\"1\"/>\n    \n    <path id=\"path1\" transform=\"translate(6,6)\"\n    \td=\"M 10 0 C 4.4771525 0 0 4.4771525 0 10 C 0 15.522847 4.4771525 20 10 20 C 15.522847 20 20 15.522847 20 10 C 20 4.4771525 15.522847 1.1842379e-15 10 0 z M 9.09375 1.03125 C 9.2292164 1.0174926 9.362825 1.0389311 9.5 1.03125 L 9.5 3.5 L 10.5 3.5 L 10.5 1.03125 C 15.063526 1.2867831 18.713217 4.9364738 18.96875 9.5 L 16.5 9.5 L 16.5 10.5 L 18.96875 10.5 C 18.713217 15.063526 15.063526 18.713217 10.5 18.96875 L 10.5 16.5 L 9.5 16.5 L 9.5 18.96875 C 4.9364738 18.713217 1.2867831 15.063526 1.03125 10.5 L 3.5 10.5 L 3.5 9.5 L 1.03125 9.5 C 1.279102 5.0736488 4.7225326 1.4751713 9.09375 1.03125 z M 9.5 5 L 9.5 8.0625 C 8.6373007 8.2844627 8 9.0680195 8 10 C 8 11.104569 8.8954305 12 10 12 C 10.931981 12 11.715537 11.362699 11.9375 10.5 L 14 10.5 L 14 9.5 L 11.9375 9.5 C 11.756642 8.7970599 11.20294 8.2433585 10.5 8.0625 L 10.5 5 L 9.5 5 z \"  \n    \tfill=\"#585858\" stroke=\"none\" />\n   \n\t<text font-size=\"11\" \n\t\tid=\"text_name\" \n\t\tx=\"16\" y=\"33\" \n\t\toryx:align=\"top center\" \n\t\tstroke=\"#373e48\"\n\t></text>\n  </g>\n</svg>",
-    "icon" : "activity/timereventlistener.png",
-    "groups" : [ "Event Listeners" ],
-    "propertyPackages" : [
-      "overrideidpackage",
-      "namepackage",
-      "documentationpackage",
-      "timerexpressionpackage",
-      "timerstarttriggerpackage",
-      "completionneutralrulepackage"],
-    "hiddenPropertyPackages" : [ ],
-    "roles" : [ "Activity", "association_start", "association_end", "ActivitiesMorph", "all" ]
-  }, {
+  },{
+     "type" : "node",
+      "id" : "EventListener",
+      "title" : "Event listener",
+      "description" : "A generic eventlistener",
+      "view" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<svg\n   xmlns=\"http://www.w3.org/2000/svg\"\n   xmlns:oryx=\"http://www.b3mn.org/oryx\"\n   width=\"40\"\n   height=\"40\"\n   version=\"1.0\">\n  <defs></defs>\n  <oryx:magnets>\n  \t<oryx:magnet oryx:cx=\"16\" oryx:cy=\"16\" oryx:default=\"yes\" />\n  </oryx:magnets>\n  <oryx:docker oryx:cx=\"16\" oryx:cy=\"16\" />\n  <g pointer-events=\"fill\">\n  \n    <circle id=\"bg_frame\" cx=\"16\" cy=\"16\" r=\"15\" stroke=\"#585858\" fill=\"#ffffff\" stroke-width=\"1\"/>\n    <circle id=\"frame\" cx=\"16\" cy=\"16\" r=\"12\" stroke=\"#585858\" fill=\"none\" stroke-width=\"1\"/>\n\t<text font-size=\"11\" \n\t\tid=\"text_name\" \n\t\tx=\"16\" y=\"33\" \n\t\toryx:align=\"top center\" \n\t\tstroke=\"#373e48\"\n\t></text>\n  </g>\n</svg>",
+      "icon" : "event/eventlistener.png",
+      "groups" : [ "Event Listeners" ],
+      "propertyPackages" : [
+        "overrideidpackage",
+        "namepackage",
+        "documentationpackage",
+        "completionneutralrulepackage",
+        "requiredrulepackage",
+        "repetitionrulepackage",
+        "planitemlifecyclelistenerspackage"],
+      "hiddenPropertyPackages" : [ ],
+      "roles" : [ "Activity", "association_start", "association_end", "ActivitiesMorph", "all" ]
+    }, {
+      "type" : "node",
+      "id" : "TimerEventListener",
+      "title" : "Timer event listener",
+      "description" : "An eventlistener with a timer trigger",
+      "view" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<svg\n   xmlns=\"http://www.w3.org/2000/svg\"\n   xmlns:oryx=\"http://www.b3mn.org/oryx\"\n   width=\"40\"\n   height=\"40\"\n   version=\"1.0\">\n  <defs></defs>\n  <oryx:magnets>\n  \t<oryx:magnet oryx:cx=\"16\" oryx:cy=\"16\" oryx:default=\"yes\" />\n  </oryx:magnets>\n  <g pointer-events=\"fill\">\n    <circle \n    \tid=\"bg_frame\" \n    \tcx=\"16\" \n    \tcy=\"16\" \n    \tr=\"15\" \n    \tstroke=\"#585858\" \n    \tfill=\"#ffffff\" \n    \tstroke-width=\"1\"\n    \tstyle=\"stroke-dasharray: 5.5, 3\" />\n    <circle id=\"frame\" cx=\"16\" cy=\"16\" r=\"15\" stroke=\"#585858\" fill=\"none\" stroke-width=\"1\"/>\n    \n    <path id=\"path1\" transform=\"translate(6,6)\"\n    \td=\"M 10 0 C 4.4771525 0 0 4.4771525 0 10 C 0 15.522847 4.4771525 20 10 20 C 15.522847 20 20 15.522847 20 10 C 20 4.4771525 15.522847 1.1842379e-15 10 0 z M 9.09375 1.03125 C 9.2292164 1.0174926 9.362825 1.0389311 9.5 1.03125 L 9.5 3.5 L 10.5 3.5 L 10.5 1.03125 C 15.063526 1.2867831 18.713217 4.9364738 18.96875 9.5 L 16.5 9.5 L 16.5 10.5 L 18.96875 10.5 C 18.713217 15.063526 15.063526 18.713217 10.5 18.96875 L 10.5 16.5 L 9.5 16.5 L 9.5 18.96875 C 4.9364738 18.713217 1.2867831 15.063526 1.03125 10.5 L 3.5 10.5 L 3.5 9.5 L 1.03125 9.5 C 1.279102 5.0736488 4.7225326 1.4751713 9.09375 1.03125 z M 9.5 5 L 9.5 8.0625 C 8.6373007 8.2844627 8 9.0680195 8 10 C 8 11.104569 8.8954305 12 10 12 C 10.931981 12 11.715537 11.362699 11.9375 10.5 L 14 10.5 L 14 9.5 L 11.9375 9.5 C 11.756642 8.7970599 11.20294 8.2433585 10.5 8.0625 L 10.5 5 L 9.5 5 z \"  \n    \tfill=\"#585858\" stroke=\"none\" />\n   \n\t<text font-size=\"11\" \n\t\tid=\"text_name\" \n\t\tx=\"16\" y=\"33\" \n\t\toryx:align=\"top center\" \n\t\tstroke=\"#373e48\"\n\t></text>\n  </g>\n</svg>",
+      "icon" : "activity/timereventlistener.png",
+      "groups" : [ "Event Listeners" ],
+      "propertyPackages" : [
+        "overrideidpackage",
+        "namepackage",
+        "documentationpackage",
+        "timerexpressionpackage",
+        "timerstarttriggerpackage",
+        "completionneutralrulepackage",
+        "requiredrulepackage",
+        "planitemlifecyclelistenerspackage"],
+      "hiddenPropertyPackages" : [ ],
+      "roles" : [ "Activity", "association_start", "association_end", "ActivitiesMorph", "all" ]
+    }, {
       "type" : "node",
       "id" : "UserEventListener",
       "title" : "User event listener",
@@ -1188,7 +1212,10 @@
         "overrideidpackage",
         "namepackage",
         "documentationpackage",
-        "completionneutralrulepackage"],
+        "completionneutralrulepackage",
+        "requiredrulepackage",
+        "repetitionrulepackage",
+        "planitemlifecyclelistenerspackage"],
       "hiddenPropertyPackages" : [ ],
       "roles" : [ "Activity", "association_start", "association_end", "ActivitiesMorph", "all" ]
   }, {
@@ -1203,7 +1230,8 @@
       "overrideidpackage",
       "namepackage",
       "documentationpackage",
-      "ifpartconditionpackage" ],
+      "ifpartconditionpackage",
+      "triggermodepackage"],
     "hiddenPropertyPackages" : [ ],
     "roles" : [ "association_start", "association_end", "SentriesMorph", "EntryCriterionOnItemBoundary" ]
   }, {
@@ -1218,7 +1246,8 @@
       "overrideidpackage",
       "namepackage",
       "documentationpackage",
-      "ifpartconditionpackage" ],
+      "ifpartconditionpackage",
+      "triggermodepackage"],
     "hiddenPropertyPackages" : [ ],
     "roles" : [ "association_start", "SentriesMorph", "ExitCriterionOnItemBoundary" ]
   }, {

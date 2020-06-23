@@ -1,13 +1,14 @@
 package com.flowable;
 
-import com.flowable.config.AppDispatcherServletConfiguration;
-import com.flowable.config.ApplicationConfiguration;
-import com.flowable.config.DatabaseAutoConfiguration;
+import org.flowable.ui.common.conf.DevelopmentConfiguration;
+import org.flowable.ui.common.rest.idm.remote.RemoteAccountResource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.FilterType;
 
 
 /**
@@ -18,17 +19,18 @@ import org.springframework.context.annotation.Import;
  * @Version: 1.0
  */
 
-//启用全局异常拦截器
-@Import(value = {
-        // 引入修改的配置
-        ApplicationConfiguration.class,
-        AppDispatcherServletConfiguration.class,
-        // 引入 DatabaseConfiguration 表更新转换
-        DatabaseAutoConfiguration.class
-})
-@ComponentScan(basePackages = {"com.flowable.*"})
 // 移除 Security 自动配置
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+@SpringBootApplication(
+        exclude = {
+                SecurityAutoConfiguration.class,
+                UserDetailsServiceAutoConfiguration.class,
+                LiquibaseAutoConfiguration.class
+        }
+)
+@ComponentScan(
+        basePackages = {"com.flowable.*", "org.flowable.ui"},
+        excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {RemoteAccountResource.class, DevelopmentConfiguration.class})
+)
 public class FlowableApp {
 
     public static void main(String[] args) {
