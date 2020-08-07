@@ -9,11 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>wjr-ops</artifactId>
+    <artifactId>wjr-ops-api</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>wjr-flow</module>
-        <module>wjr-flow-design</module>
+        <module>wjr-flow-api</module>
     </modules>
+
 
 </project>

@@ -3,17 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>wjr-cloud</artifactId>
+        <artifactId>wjr-ops-api</artifactId>
         <groupId>com.wjr</groupId>
         <version>1.0.0.RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>wjr-ops</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>wjr-flow</module>
-        <module>wjr-flow-design</module>
-    </modules>
+    <artifactId>wjr-flow-api</artifactId>
+
 
 </project>
