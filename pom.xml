@@ -15,8 +15,6 @@
         <module>wjr-common</module>
         <module>wjr-server-api</module>
         <module>wjr-canal</module>
-        <module>wjr-ops</module>
-        <module>wjr-ops-api</module>
     </modules>
 
     <parent>
